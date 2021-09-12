@@ -1,0 +1,13 @@
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson1_ArrayList\bin\Debug\netcoreapp3.1\Lesson1_ArrayList.exe
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson1_ArrayList\bin\Debug\netcoreapp3.1\Lesson1_ArrayList.deps.json
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson1_ArrayList\bin\Debug\netcoreapp3.1\Lesson1_ArrayList.runtimeconfig.json
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson1_ArrayList\bin\Debug\netcoreapp3.1\Lesson1_ArrayList.runtimeconfig.dev.json
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson1_ArrayList\bin\Debug\netcoreapp3.1\Lesson1_ArrayList.dll
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson1_ArrayList\bin\Debug\netcoreapp3.1\Lesson1_ArrayList.pdb
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson1_ArrayList\obj\Debug\netcoreapp3.1\Lesson1_ArrayList.csprojAssemblyReference.cache
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson1_ArrayList\obj\Debug\netcoreapp3.1\Lesson1_ArrayList.AssemblyInfoInputs.cache
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson1_ArrayList\obj\Debug\netcoreapp3.1\Lesson1_ArrayList.AssemblyInfo.cs
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson1_ArrayList\obj\Debug\netcoreapp3.1\Lesson1_ArrayList.csproj.CoreCompileInputs.cache
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson1_ArrayList\obj\Debug\netcoreapp3.1\Lesson1_ArrayList.dll
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson1_ArrayList\obj\Debug\netcoreapp3.1\Lesson1_ArrayList.pdb
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson1_ArrayList\obj\Debug\netcoreapp3.1\Lesson1_ArrayList.genruntimeconfig.cache
