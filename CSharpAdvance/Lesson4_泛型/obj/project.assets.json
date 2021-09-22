@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Erina\\source\\repos\\CSharpLessons\\CSharpAdvance\\Lesson1_ArrayList\\Lesson1_ArrayList.csproj",
-      "projectName": "Lesson1_ArrayList",
-      "projectPath": "C:\\Users\\Erina\\source\\repos\\CSharpLessons\\CSharpAdvance\\Lesson1_ArrayList\\Lesson1_ArrayList.csproj",
+      "projectUniqueName": "C:\\Users\\Erina\\source\\repos\\CSharpLessons\\CSharpAdvance\\Lesson4_泛型\\Lesson4_泛型.csproj",
+      "projectName": "Lesson4_泛型",
+      "projectPath": "C:\\Users\\Erina\\source\\repos\\CSharpLessons\\CSharpAdvance\\Lesson4_泛型\\Lesson4_泛型.csproj",
       "packagesPath": "C:\\Users\\Erina\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Erina\\source\\repos\\CSharpLessons\\CSharpAdvance\\Lesson1_ArrayList\\obj\\",
+      "outputPath": "C:\\Users\\Erina\\source\\repos\\CSharpLessons\\CSharpAdvance\\Lesson4_泛型\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Erina\\AppData\\Roaming\\NuGet\\NuGet.Config",
