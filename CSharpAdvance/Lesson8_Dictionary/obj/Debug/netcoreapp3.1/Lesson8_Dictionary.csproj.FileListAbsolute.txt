@@ -1,0 +1,13 @@
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson8_Dictionary\bin\Debug\netcoreapp3.1\Lesson8_Dictionary.exe
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson8_Dictionary\bin\Debug\netcoreapp3.1\Lesson8_Dictionary.deps.json
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson8_Dictionary\bin\Debug\netcoreapp3.1\Lesson8_Dictionary.runtimeconfig.json
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson8_Dictionary\bin\Debug\netcoreapp3.1\Lesson8_Dictionary.runtimeconfig.dev.json
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson8_Dictionary\bin\Debug\netcoreapp3.1\Lesson8_Dictionary.dll
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson8_Dictionary\bin\Debug\netcoreapp3.1\Lesson8_Dictionary.pdb
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson8_Dictionary\obj\Debug\netcoreapp3.1\Lesson8_Dictionary.csprojAssemblyReference.cache
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson8_Dictionary\obj\Debug\netcoreapp3.1\Lesson8_Dictionary.AssemblyInfoInputs.cache
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson8_Dictionary\obj\Debug\netcoreapp3.1\Lesson8_Dictionary.AssemblyInfo.cs
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson8_Dictionary\obj\Debug\netcoreapp3.1\Lesson8_Dictionary.csproj.CoreCompileInputs.cache
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson8_Dictionary\obj\Debug\netcoreapp3.1\Lesson8_Dictionary.dll
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson8_Dictionary\obj\Debug\netcoreapp3.1\Lesson8_Dictionary.pdb
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson8_Dictionary\obj\Debug\netcoreapp3.1\Lesson8_Dictionary.genruntimeconfig.cache
