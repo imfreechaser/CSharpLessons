@@ -8,19 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\Erina\\.nuget\\packages\\": {}
+    "C:\\Users\\RayData\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Erina\\source\\repos\\CSharpLessons\\CSharpAdvance\\Lesson8_Dictionary\\Lesson8_Dictionary.csproj",
+      "projectUniqueName": "C:\\Users\\RayData\\source\\repos\\CSharpLessons\\CSharpAdvance\\Lesson8_Dictionary\\Lesson8_Dictionary.csproj",
       "projectName": "Lesson8_Dictionary",
-      "projectPath": "C:\\Users\\Erina\\source\\repos\\CSharpLessons\\CSharpAdvance\\Lesson8_Dictionary\\Lesson8_Dictionary.csproj",
-      "packagesPath": "C:\\Users\\Erina\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Erina\\source\\repos\\CSharpLessons\\CSharpAdvance\\Lesson8_Dictionary\\obj\\",
+      "projectPath": "C:\\Users\\RayData\\source\\repos\\CSharpLessons\\CSharpAdvance\\Lesson8_Dictionary\\Lesson8_Dictionary.csproj",
+      "packagesPath": "C:\\Users\\RayData\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\RayData\\source\\repos\\CSharpLessons\\CSharpAdvance\\Lesson8_Dictionary\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Erina\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\RayData\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -32,7 +32,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -44,7 +43,6 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
-        "targetAlias": "netcoreapp3.1",
         "imports": [
           "net461",
           "net462",
@@ -60,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.414\\RuntimeIdentifierGraph.json"
       }
     }
   }
