@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tT3YcUM4dk3Fqk5jHK3tbE7MMvKWv4Rp8yBkrx8VZca+akUxiWEotxvW/hjwMw/M1chS5CNGKrE0miOzKo3HXg==",
+  "dgSpecHash": "jXde5ZKjdzgV1HSxnEADSsdM7yeZewgO+GT1XKCvTr6D4DNc1oQpb8hj8SpDR9RWzrjXAUunbU1wRNlaVgOl7Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Erina\\source\\repos\\CSharpLessons1\\CSharpAdvance\\Lesson5_泛型约束\\Lesson5_泛型约束.csproj",
+  "projectFilePath": "C:\\Users\\Erina\\source\\repos\\CSharpLessons\\CSharpAdvance\\Lesson5_泛型约束\\Lesson5_泛型约束.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

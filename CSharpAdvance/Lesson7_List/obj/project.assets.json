@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Erina\\source\\repos\\CSharpLessons1\\CSharpAdvance\\Lesson7_List\\Lesson7_List.csproj",
+      "projectUniqueName": "C:\\Users\\Erina\\source\\repos\\CSharpLessons\\CSharpAdvance\\Lesson7_List\\Lesson7_List.csproj",
       "projectName": "Lesson7_List",
-      "projectPath": "C:\\Users\\Erina\\source\\repos\\CSharpLessons1\\CSharpAdvance\\Lesson7_List\\Lesson7_List.csproj",
+      "projectPath": "C:\\Users\\Erina\\source\\repos\\CSharpLessons\\CSharpAdvance\\Lesson7_List\\Lesson7_List.csproj",
       "packagesPath": "C:\\Users\\Erina\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Erina\\source\\repos\\CSharpLessons1\\CSharpAdvance\\Lesson7_List\\obj\\",
+      "outputPath": "C:\\Users\\Erina\\source\\repos\\CSharpLessons\\CSharpAdvance\\Lesson7_List\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Erina\\AppData\\Roaming\\NuGet\\NuGet.Config",

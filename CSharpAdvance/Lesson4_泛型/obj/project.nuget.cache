@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SGudW2KT2SnYkvcvXQMRf4C6jiaXTN4AlZrwuD2BIoZEzTpCMi1UUDhH/aiNdAUlC3ZXj7QY4Q2jQTEWcj27pg==",
+  "dgSpecHash": "evqJY/V+Q+74Mbe7aoQXowF5OcrfispbXUuQJP1zkyj1DVnOUGLRkPltW1HV6SuVTfa2E2m1gRWRPL7cyVNiZA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Erina\\source\\repos\\CSharpLessons1\\CSharpAdvance\\Lesson4_泛型\\Lesson4_泛型.csproj",
+  "projectFilePath": "C:\\Users\\Erina\\source\\repos\\CSharpLessons\\CSharpAdvance\\Lesson4_泛型\\Lesson4_泛型.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
