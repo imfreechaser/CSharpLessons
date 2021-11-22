@@ -1,0 +1,13 @@
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson12_委托\bin\Debug\netcoreapp3.1\Lesson12_委托.exe
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson12_委托\bin\Debug\netcoreapp3.1\Lesson12_委托.deps.json
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson12_委托\bin\Debug\netcoreapp3.1\Lesson12_委托.runtimeconfig.json
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson12_委托\bin\Debug\netcoreapp3.1\Lesson12_委托.runtimeconfig.dev.json
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson12_委托\bin\Debug\netcoreapp3.1\Lesson12_委托.dll
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson12_委托\bin\Debug\netcoreapp3.1\Lesson12_委托.pdb
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson12_委托\obj\Debug\netcoreapp3.1\Lesson12_委托.csprojAssemblyReference.cache
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson12_委托\obj\Debug\netcoreapp3.1\Lesson12_委托.AssemblyInfoInputs.cache
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson12_委托\obj\Debug\netcoreapp3.1\Lesson12_委托.AssemblyInfo.cs
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson12_委托\obj\Debug\netcoreapp3.1\Lesson12_委托.csproj.CoreCompileInputs.cache
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson12_委托\obj\Debug\netcoreapp3.1\Lesson12_委托.dll
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson12_委托\obj\Debug\netcoreapp3.1\Lesson12_委托.pdb
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson12_委托\obj\Debug\netcoreapp3.1\Lesson12_委托.genruntimeconfig.cache

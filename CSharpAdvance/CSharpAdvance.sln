@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Practice", "Practice\Practi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lesson9练习题", "Lesson9练习题\Lesson9练习题.csproj", "{807C5257-FA3A-43CC-9D81-C4FD56CE69FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson10_LinkedList", "Lesson10_LinkedList\Lesson10_LinkedList.csproj", "{3247DCA0-157D-407F-A7C9-1ADA715D45DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lesson10_LinkedList", "Lesson10_LinkedList\Lesson10_LinkedList.csproj", "{3247DCA0-157D-407F-A7C9-1ADA715D45DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson12_委托", "Lesson12_委托\Lesson12_委托.csproj", "{10F2C48B-3AD2-4EE6-A1C5-EC3BAEC8ED17}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{3247DCA0-157D-407F-A7C9-1ADA715D45DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3247DCA0-157D-407F-A7C9-1ADA715D45DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3247DCA0-157D-407F-A7C9-1ADA715D45DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10F2C48B-3AD2-4EE6-A1C5-EC3BAEC8ED17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10F2C48B-3AD2-4EE6-A1C5-EC3BAEC8ED17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10F2C48B-3AD2-4EE6-A1C5-EC3BAEC8ED17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10F2C48B-3AD2-4EE6-A1C5-EC3BAEC8ED17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
