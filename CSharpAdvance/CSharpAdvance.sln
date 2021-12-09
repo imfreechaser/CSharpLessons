@@ -25,7 +25,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lesson9练习题", "Lesson9
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lesson10_LinkedList", "Lesson10_LinkedList\Lesson10_LinkedList.csproj", "{3247DCA0-157D-407F-A7C9-1ADA715D45DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson12_委托", "Lesson12_委托\Lesson12_委托.csproj", "{10F2C48B-3AD2-4EE6-A1C5-EC3BAEC8ED17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lesson12_委托", "Lesson12_委托\Lesson12_委托.csproj", "{10F2C48B-3AD2-4EE6-A1C5-EC3BAEC8ED17}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lesson13_事件", "Lesson13_事件\Lesson13_事件.csproj", "{AF75D374-DCE2-4A46-A01D-18080E3CD208}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson14_匿名函数", "Lesson14_匿名函数\Lesson14_匿名函数.csproj", "{79D50965-C657-4142-9F2A-E7554C69FF97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +85,14 @@ Global
 		{10F2C48B-3AD2-4EE6-A1C5-EC3BAEC8ED17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10F2C48B-3AD2-4EE6-A1C5-EC3BAEC8ED17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10F2C48B-3AD2-4EE6-A1C5-EC3BAEC8ED17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF75D374-DCE2-4A46-A01D-18080E3CD208}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF75D374-DCE2-4A46-A01D-18080E3CD208}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF75D374-DCE2-4A46-A01D-18080E3CD208}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF75D374-DCE2-4A46-A01D-18080E3CD208}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79D50965-C657-4142-9F2A-E7554C69FF97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79D50965-C657-4142-9F2A-E7554C69FF97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79D50965-C657-4142-9F2A-E7554C69FF97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79D50965-C657-4142-9F2A-E7554C69FF97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
