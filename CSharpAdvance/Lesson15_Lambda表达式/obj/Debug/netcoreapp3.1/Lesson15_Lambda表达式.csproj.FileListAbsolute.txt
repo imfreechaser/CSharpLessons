@@ -1,0 +1,12 @@
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson15_Lambda表达式\bin\Debug\netcoreapp3.1\Lesson15_Lambda表达式.exe
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson15_Lambda表达式\bin\Debug\netcoreapp3.1\Lesson15_Lambda表达式.deps.json
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson15_Lambda表达式\bin\Debug\netcoreapp3.1\Lesson15_Lambda表达式.runtimeconfig.json
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson15_Lambda表达式\bin\Debug\netcoreapp3.1\Lesson15_Lambda表达式.runtimeconfig.dev.json
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson15_Lambda表达式\bin\Debug\netcoreapp3.1\Lesson15_Lambda表达式.dll
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson15_Lambda表达式\bin\Debug\netcoreapp3.1\Lesson15_Lambda表达式.pdb
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson15_Lambda表达式\obj\Debug\netcoreapp3.1\Lesson15_Lambda表达式.AssemblyInfoInputs.cache
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson15_Lambda表达式\obj\Debug\netcoreapp3.1\Lesson15_Lambda表达式.AssemblyInfo.cs
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson15_Lambda表达式\obj\Debug\netcoreapp3.1\Lesson15_Lambda表达式.csproj.CoreCompileInputs.cache
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson15_Lambda表达式\obj\Debug\netcoreapp3.1\Lesson15_Lambda表达式.dll
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson15_Lambda表达式\obj\Debug\netcoreapp3.1\Lesson15_Lambda表达式.pdb
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson15_Lambda表达式\obj\Debug\netcoreapp3.1\Lesson15_Lambda表达式.genruntimeconfig.cache
