@@ -11,8 +11,7 @@ namespace Lesson15_Lambda表达式
         }
     }
     class Test
-    {
-
+    {        
         public Action SomeMethod()
         {
             Action action = null;
