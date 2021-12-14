@@ -10,3 +10,16 @@ C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson16_List排序\ob
 C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson16_List排序\obj\Debug\netcoreapp3.1\Lesson16_List排序.dll
 C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson16_List排序\obj\Debug\netcoreapp3.1\Lesson16_List排序.pdb
 C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson16_List排序\obj\Debug\netcoreapp3.1\Lesson16_List排序.genruntimeconfig.cache
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson16_List排序\bin\Debug\netcoreapp3.1\Lesson16_List排序.exe
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson16_List排序\bin\Debug\netcoreapp3.1\Lesson16_List排序.deps.json
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson16_List排序\bin\Debug\netcoreapp3.1\Lesson16_List排序.runtimeconfig.json
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson16_List排序\bin\Debug\netcoreapp3.1\Lesson16_List排序.runtimeconfig.dev.json
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson16_List排序\bin\Debug\netcoreapp3.1\Lesson16_List排序.dll
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson16_List排序\bin\Debug\netcoreapp3.1\Lesson16_List排序.pdb
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson16_List排序\obj\Debug\netcoreapp3.1\Lesson16_List排序.csprojAssemblyReference.cache
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson16_List排序\obj\Debug\netcoreapp3.1\Lesson16_List排序.AssemblyInfoInputs.cache
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson16_List排序\obj\Debug\netcoreapp3.1\Lesson16_List排序.AssemblyInfo.cs
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson16_List排序\obj\Debug\netcoreapp3.1\Lesson16_List排序.csproj.CoreCompileInputs.cache
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson16_List排序\obj\Debug\netcoreapp3.1\Lesson16_List排序.dll
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson16_List排序\obj\Debug\netcoreapp3.1\Lesson16_List排序.pdb
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson16_List排序\obj\Debug\netcoreapp3.1\Lesson16_List排序.genruntimeconfig.cache
