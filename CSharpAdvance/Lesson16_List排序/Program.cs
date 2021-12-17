@@ -52,25 +52,14 @@ namespace Lesson16_List排序
 
             //            break;
             //        case ConsoleKey.D4:
-            //            sort = !sort;
             //            if (chosenNum == 0)
             //            {
             //                Console.WriteLine("请先选择排序方式！");
-            //                sort = !sort;
             //                wrongNum = true;
+            //                break;
             //            }
-            //            else if (chosenNum == 1)
-            //            {
-            //                monsters.Sort(Monster.AtkSort(sort));
-            //            }
-            //            else if (chosenNum == 2)
-            //            {
-            //                monsters.Sort(Monster.DfdSort(sort));
-            //            }
-            //            else
-            //            {
-            //                monsters.Sort(Monster.HpSort(sort));
-            //            }
+            //            monsters.Reverse();
+            //            sort = !sort;
             //            break;
 
             //        default:
@@ -91,7 +80,7 @@ namespace Lesson16_List排序
             //#endregion
             //#region Practice2
             //List<Thing> thingList = new List<Thing>();
-            //thingList.Add(new Thing(1,3,"ad"));
+            //thingList.Add(new Thing(1, 3, "ad"));
             //thingList.Add(new Thing(2, 4, "ads"));
             //thingList.Add(new Thing(3, 2, "pens"));
             //thingList.Add(new Thing(4, 1, "apple"));
@@ -110,15 +99,15 @@ namespace Lesson16_List排序
             //#endregion
             #region Practice3
             Dictionary<int, string> mydic = new Dictionary<int, string>();
-            mydic.Add(4,"Tom");
+            mydic.Add(4, "Tom");
             mydic.Add(2, "Jerry");
             mydic.Add(3, "Marry");
-            mydic.Add(1,"Tobby");
+            mydic.Add(1, "Tobby");
             List<Dic> dicList = new List<Dic>();
-            
+
             foreach (int item in mydic.Keys)
             {
-                dicList.Add(new Dic(item,mydic[item]));
+                dicList.Add(new Dic(item, mydic[item]));
             }
             dicList.Sort(Dic.Sort);
             for (int i = 0; i < dicList.Count; i++)
@@ -182,6 +171,7 @@ namespace Lesson16_List排序
         public int Type { get; }
         public int Quality { get; }
         public string Name { get; }
+
         public Thing(int type,int quality,string name)
         {
             Type = type;
@@ -198,7 +188,7 @@ namespace Lesson16_List排序
     }
     class Dic
     {
-        public int Key { get; set; }
+        public int Key { get;set; }
         public string Value { get; set; }
         public Dic(int key, string value)
         {
