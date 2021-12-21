@@ -1,0 +1,13 @@
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson18_多线程\bin\Debug\netcoreapp3.1\Lesson18_多线程.exe
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson18_多线程\bin\Debug\netcoreapp3.1\Lesson18_多线程.deps.json
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson18_多线程\bin\Debug\netcoreapp3.1\Lesson18_多线程.runtimeconfig.json
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson18_多线程\bin\Debug\netcoreapp3.1\Lesson18_多线程.runtimeconfig.dev.json
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson18_多线程\bin\Debug\netcoreapp3.1\Lesson18_多线程.dll
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson18_多线程\bin\Debug\netcoreapp3.1\Lesson18_多线程.pdb
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson18_多线程\obj\Debug\netcoreapp3.1\Lesson18_多线程.AssemblyInfoInputs.cache
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson18_多线程\obj\Debug\netcoreapp3.1\Lesson18_多线程.AssemblyInfo.cs
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson18_多线程\obj\Debug\netcoreapp3.1\Lesson18_多线程.csproj.CoreCompileInputs.cache
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson18_多线程\obj\Debug\netcoreapp3.1\Lesson18_多线程.dll
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson18_多线程\obj\Debug\netcoreapp3.1\Lesson18_多线程.pdb
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson18_多线程\obj\Debug\netcoreapp3.1\Lesson18_多线程.genruntimeconfig.cache
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson18_多线程\obj\Debug\netcoreapp3.1\Lesson18_多线程.csprojAssemblyReference.cache
