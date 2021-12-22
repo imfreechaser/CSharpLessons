@@ -1,0 +1,13 @@
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson19_预处理指令\bin\Debug\netcoreapp3.1\Lesson19_预处理指令.exe
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson19_预处理指令\bin\Debug\netcoreapp3.1\Lesson19_预处理指令.deps.json
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson19_预处理指令\bin\Debug\netcoreapp3.1\Lesson19_预处理指令.runtimeconfig.json
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson19_预处理指令\bin\Debug\netcoreapp3.1\Lesson19_预处理指令.runtimeconfig.dev.json
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson19_预处理指令\bin\Debug\netcoreapp3.1\Lesson19_预处理指令.dll
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson19_预处理指令\bin\Debug\netcoreapp3.1\Lesson19_预处理指令.pdb
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson19_预处理指令\obj\Debug\netcoreapp3.1\Lesson19_预处理指令.csprojAssemblyReference.cache
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson19_预处理指令\obj\Debug\netcoreapp3.1\Lesson19_预处理指令.AssemblyInfoInputs.cache
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson19_预处理指令\obj\Debug\netcoreapp3.1\Lesson19_预处理指令.AssemblyInfo.cs
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson19_预处理指令\obj\Debug\netcoreapp3.1\Lesson19_预处理指令.csproj.CoreCompileInputs.cache
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson19_预处理指令\obj\Debug\netcoreapp3.1\Lesson19_预处理指令.dll
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson19_预处理指令\obj\Debug\netcoreapp3.1\Lesson19_预处理指令.pdb
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson19_预处理指令\obj\Debug\netcoreapp3.1\Lesson19_预处理指令.genruntimeconfig.cache

@@ -37,7 +37,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lesson16_List排序", "Less
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lesson17_协变逆变", "Lesson17_协变逆变\Lesson17_协变逆变.csproj", "{E2EB04DB-DED4-4908-AC54-42BC4B4A90AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson18_多线程", "Lesson18_多线程\Lesson18_多线程.csproj", "{62A8FEFB-BCD4-4BF1-906A-8CDFC33FC621}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lesson18_多线程", "Lesson18_多线程\Lesson18_多线程.csproj", "{62A8FEFB-BCD4-4BF1-906A-8CDFC33FC621}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson19_预处理指令", "Lesson19_预处理指令\Lesson19_预处理指令.csproj", "{86C3BF2D-5FEB-4573-AA65-457CBEACE723}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -117,6 +119,10 @@ Global
 		{62A8FEFB-BCD4-4BF1-906A-8CDFC33FC621}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62A8FEFB-BCD4-4BF1-906A-8CDFC33FC621}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62A8FEFB-BCD4-4BF1-906A-8CDFC33FC621}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86C3BF2D-5FEB-4573-AA65-457CBEACE723}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86C3BF2D-5FEB-4573-AA65-457CBEACE723}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86C3BF2D-5FEB-4573-AA65-457CBEACE723}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86C3BF2D-5FEB-4573-AA65-457CBEACE723}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
