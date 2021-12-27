@@ -41,9 +41,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lesson18_多线程", "Lesso
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lesson19_预处理指令", "Lesson19_预处理指令\Lesson19_预处理指令.csproj", "{86C3BF2D-5FEB-4573-AA65-457CBEACE723}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson20_反射_Assembly_Activator", "Lesson20_反射_Assembly_Activator\Lesson20_反射_Assembly_Activator.csproj", "{4E82206D-7E44-463D-8D85-49D381D52A6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lesson20_反射_Assembly_Activator", "Lesson20_反射_Assembly_Activator\Lesson20_反射_Assembly_Activator.csproj", "{4E82206D-7E44-463D-8D85-49D381D52A6E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "类库测试", "类库测试\类库测试.csproj", "{C0AE4081-B106-4F06-9857-AD7007CC8004}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson20_反射_Assembly_Activator_练习题", "Lesson20_反射_Assembly_Activator_练习题\Lesson20_反射_Assembly_Activator_练习题.csproj", "{79837F7E-2CA7-42B6-A579-A5E34F57878F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson20", "Lesson20\Lesson20.csproj", "{DB802946-2432-40F3-8E15-DBFA6A3C70AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -135,6 +139,14 @@ Global
 		{C0AE4081-B106-4F06-9857-AD7007CC8004}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0AE4081-B106-4F06-9857-AD7007CC8004}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0AE4081-B106-4F06-9857-AD7007CC8004}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79837F7E-2CA7-42B6-A579-A5E34F57878F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79837F7E-2CA7-42B6-A579-A5E34F57878F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79837F7E-2CA7-42B6-A579-A5E34F57878F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79837F7E-2CA7-42B6-A579-A5E34F57878F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB802946-2432-40F3-8E15-DBFA6A3C70AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB802946-2432-40F3-8E15-DBFA6A3C70AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB802946-2432-40F3-8E15-DBFA6A3C70AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB802946-2432-40F3-8E15-DBFA6A3C70AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

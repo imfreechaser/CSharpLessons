@@ -1,0 +1,6 @@
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson20\bin\Debug\Lesson20.dll
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson20\bin\Debug\Lesson20.pdb
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson20\obj\Debug\Lesson20.csprojAssemblyReference.cache
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson20\obj\Debug\Lesson20.csproj.CoreCompileInputs.cache
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson20\obj\Debug\Lesson20.dll
+C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson20\obj\Debug\Lesson20.pdb
