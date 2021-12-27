@@ -1,0 +1,13 @@
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson20_反射_Assembly_Activator\bin\Debug\netcoreapp3.1\Lesson20_反射_Assembly_Activator.exe
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson20_反射_Assembly_Activator\bin\Debug\netcoreapp3.1\Lesson20_反射_Assembly_Activator.deps.json
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson20_反射_Assembly_Activator\bin\Debug\netcoreapp3.1\Lesson20_反射_Assembly_Activator.runtimeconfig.json
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson20_反射_Assembly_Activator\bin\Debug\netcoreapp3.1\Lesson20_反射_Assembly_Activator.runtimeconfig.dev.json
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson20_反射_Assembly_Activator\bin\Debug\netcoreapp3.1\Lesson20_反射_Assembly_Activator.dll
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson20_反射_Assembly_Activator\bin\Debug\netcoreapp3.1\Lesson20_反射_Assembly_Activator.pdb
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson20_反射_Assembly_Activator\obj\Debug\netcoreapp3.1\Lesson20_反射_Assembly_Activator.AssemblyInfoInputs.cache
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson20_反射_Assembly_Activator\obj\Debug\netcoreapp3.1\Lesson20_反射_Assembly_Activator.AssemblyInfo.cs
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson20_反射_Assembly_Activator\obj\Debug\netcoreapp3.1\Lesson20_反射_Assembly_Activator.csproj.CoreCompileInputs.cache
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson20_反射_Assembly_Activator\obj\Debug\netcoreapp3.1\Lesson20_反射_Assembly_Activator.dll
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson20_反射_Assembly_Activator\obj\Debug\netcoreapp3.1\Lesson20_反射_Assembly_Activator.pdb
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson20_反射_Assembly_Activator\obj\Debug\netcoreapp3.1\Lesson20_反射_Assembly_Activator.genruntimeconfig.cache
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson20_反射_Assembly_Activator\obj\Debug\netcoreapp3.1\Lesson20_反射_Assembly_Activator.csprojAssemblyReference.cache

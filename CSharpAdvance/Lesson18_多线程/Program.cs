@@ -23,6 +23,9 @@ namespace Lesson18_多线程
             b.Print();
             t.Start();
 
+            MyTestClass mtc = new MyTestClass();
+            
+
             while (true)
             {
                 b.Clear();
@@ -111,5 +114,9 @@ namespace Lesson18_多线程
             this.y = y;
             myDir = dir;
         }
+    }
+    class MyTestClass
+    {
+
     }
 }
