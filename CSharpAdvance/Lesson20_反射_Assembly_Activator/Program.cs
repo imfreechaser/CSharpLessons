@@ -38,13 +38,20 @@ namespace Lesson20_反射_Assembly_Activator
             Console.Clear();
             Console.CursorVisible = false;
             //运行程序
-            while (true)
-            {
-                Thread.Sleep(1000);
-                clear.Invoke(boxObj,null);
-                move.Invoke(boxObj, null);
-                print.Invoke(boxObj, null);
-            }
+            //while (true)
+            //{
+            //    Thread.Sleep(1000);
+            //    clear.Invoke(boxObj,null);
+            //    move.Invoke(boxObj, null);
+            //    print.Invoke(boxObj, null);
+            //}
+
+            Test t = new Test();
+            Type testT = t.GetType();
         }
+    }
+    class Test
+    {
+
     }
 }

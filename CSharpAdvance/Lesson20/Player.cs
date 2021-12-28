@@ -9,11 +9,19 @@ namespace Lesson20
     public class Player
     {
         public string name;
-        public int hp;
+
+        [RemindNoModify]
+        public int Hp { get; set; }
+
+        [RemindNoModify]
         public int atk;
         public int dfd;
         public int PosX, PosY;
 
+
+    }
+    sealed class RemindNoModifyAttribute : Attribute
+    {
 
     }
 }

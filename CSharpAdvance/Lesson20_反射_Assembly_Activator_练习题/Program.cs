@@ -7,13 +7,15 @@ namespace Lesson20_反射_Assembly_Activator_练习题
     {
         static void Main(string[] args)
         {
-            Assembly assembly = Assembly.LoadFrom(@"C:\Users\Erina\source\repos\CSharpLessons\CSharpAdvance\Lesson20\bin\Debug\Lesson20");
+            Assembly assembly = Assembly.LoadFrom(@"C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson20\bin\Debug\Lesson20");
             Type[] types = assembly.GetTypes();
             for (int i = 0; i < types.Length; i++)
             {
                 Console.WriteLine(types[i]);
             }
             Type playerT = assembly.GetType("Lesson20.Player");
+            Type remindNoModify = assembly.GetType("Lesson20.RemindNoModifyAttribute");
+
             MemberInfo[] members = playerT.GetMembers();
             for (int i = 0; i < members.Length; i++)
             {
@@ -27,12 +29,27 @@ namespace Lesson20_反射_Assembly_Activator_练习题
             name.SetValue(player,"Zhangsan");
             Console.WriteLine(name.GetValue(player));
 
-            FieldInfo hp = playerT.GetField("hp");
-            hp.SetValue(player, 200);
+            PropertyInfo hp = playerT.GetProperty("Hp");
+            if (hp.IsDefined(remindNoModify, false))
+            {
+                Console.WriteLine("非法操作，随意修改Hp！");
+            }
+            else
+            {
+                hp.SetValue(player, 200);
+            }
             Console.WriteLine(hp.GetValue(player));
 
+            
             FieldInfo atk = playerT.GetField("atk");
-            atk.SetValue(player, 40);
+            if (atk.IsDefined(remindNoModify, false))
+            {
+                Console.WriteLine("非法操作，随意修改atk！");
+            }
+            else
+            {
+                atk.SetValue(player, 40);
+            }
             Console.WriteLine(atk.GetValue(player));
 
 
