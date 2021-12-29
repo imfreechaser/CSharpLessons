@@ -1,0 +1,13 @@
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson21_迭代器\bin\Debug\netcoreapp3.1\Lesson21_迭代器.exe
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson21_迭代器\bin\Debug\netcoreapp3.1\Lesson21_迭代器.deps.json
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson21_迭代器\bin\Debug\netcoreapp3.1\Lesson21_迭代器.runtimeconfig.json
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson21_迭代器\bin\Debug\netcoreapp3.1\Lesson21_迭代器.runtimeconfig.dev.json
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson21_迭代器\bin\Debug\netcoreapp3.1\Lesson21_迭代器.dll
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson21_迭代器\bin\Debug\netcoreapp3.1\Lesson21_迭代器.pdb
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson21_迭代器\obj\Debug\netcoreapp3.1\Lesson21_迭代器.csprojAssemblyReference.cache
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson21_迭代器\obj\Debug\netcoreapp3.1\Lesson21_迭代器.AssemblyInfoInputs.cache
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson21_迭代器\obj\Debug\netcoreapp3.1\Lesson21_迭代器.AssemblyInfo.cs
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson21_迭代器\obj\Debug\netcoreapp3.1\Lesson21_迭代器.csproj.CoreCompileInputs.cache
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson21_迭代器\obj\Debug\netcoreapp3.1\Lesson21_迭代器.dll
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson21_迭代器\obj\Debug\netcoreapp3.1\Lesson21_迭代器.pdb
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson21_迭代器\obj\Debug\netcoreapp3.1\Lesson21_迭代器.genruntimeconfig.cache
