@@ -1,0 +1,12 @@
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson23_特殊语法\obj\Debug\netcoreapp3.1\Lesson23_特殊语法.AssemblyInfoInputs.cache
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson23_特殊语法\obj\Debug\netcoreapp3.1\Lesson23_特殊语法.AssemblyInfo.cs
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson23_特殊语法\obj\Debug\netcoreapp3.1\Lesson23_特殊语法.csproj.CoreCompileInputs.cache
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson23_特殊语法\bin\Debug\netcoreapp3.1\Lesson23_特殊语法.exe
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson23_特殊语法\bin\Debug\netcoreapp3.1\Lesson23_特殊语法.deps.json
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson23_特殊语法\bin\Debug\netcoreapp3.1\Lesson23_特殊语法.runtimeconfig.json
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson23_特殊语法\bin\Debug\netcoreapp3.1\Lesson23_特殊语法.runtimeconfig.dev.json
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson23_特殊语法\bin\Debug\netcoreapp3.1\Lesson23_特殊语法.dll
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson23_特殊语法\bin\Debug\netcoreapp3.1\Lesson23_特殊语法.pdb
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson23_特殊语法\obj\Debug\netcoreapp3.1\Lesson23_特殊语法.dll
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson23_特殊语法\obj\Debug\netcoreapp3.1\Lesson23_特殊语法.pdb
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\Lesson23_特殊语法\obj\Debug\netcoreapp3.1\Lesson23_特殊语法.genruntimeconfig.cache

@@ -1,0 +1,13 @@
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\实践小项目-俄罗斯方块\bin\Debug\netcoreapp3.1\实践小项目-俄罗斯方块.exe
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\实践小项目-俄罗斯方块\bin\Debug\netcoreapp3.1\实践小项目-俄罗斯方块.deps.json
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\实践小项目-俄罗斯方块\bin\Debug\netcoreapp3.1\实践小项目-俄罗斯方块.runtimeconfig.json
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\实践小项目-俄罗斯方块\bin\Debug\netcoreapp3.1\实践小项目-俄罗斯方块.runtimeconfig.dev.json
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\实践小项目-俄罗斯方块\bin\Debug\netcoreapp3.1\实践小项目-俄罗斯方块.dll
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\实践小项目-俄罗斯方块\bin\Debug\netcoreapp3.1\实践小项目-俄罗斯方块.pdb
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\实践小项目-俄罗斯方块\obj\Debug\netcoreapp3.1\实践小项目-俄罗斯方块.csprojAssemblyReference.cache
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\实践小项目-俄罗斯方块\obj\Debug\netcoreapp3.1\实践小项目-俄罗斯方块.AssemblyInfoInputs.cache
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\实践小项目-俄罗斯方块\obj\Debug\netcoreapp3.1\实践小项目-俄罗斯方块.AssemblyInfo.cs
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\实践小项目-俄罗斯方块\obj\Debug\netcoreapp3.1\实践小项目-俄罗斯方块.csproj.CoreCompileInputs.cache
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\实践小项目-俄罗斯方块\obj\Debug\netcoreapp3.1\实践小项目-俄罗斯方块.dll
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\实践小项目-俄罗斯方块\obj\Debug\netcoreapp3.1\实践小项目-俄罗斯方块.pdb
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\实践小项目-俄罗斯方块\obj\Debug\netcoreapp3.1\实践小项目-俄罗斯方块.genruntimeconfig.cache
