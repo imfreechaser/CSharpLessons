@@ -8,6 +8,8 @@ namespace 实践小项目_俄罗斯方块
         {
             Game game = new Game();
             game.GameStart();
+
         }
+
     }
 }

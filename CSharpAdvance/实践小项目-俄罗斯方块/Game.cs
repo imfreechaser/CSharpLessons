@@ -31,7 +31,7 @@ namespace 实践小项目_俄罗斯方块
         /// <summary>
         /// 控制台窗口宽高
         /// </summary>
-        public const int w = 60, h = 35;
+        public const int w = 53, h = 35;
         
         // 游戏初始化
         // 包含控制台的初始设置等内容
