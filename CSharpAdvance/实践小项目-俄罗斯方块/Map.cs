@@ -22,14 +22,14 @@ namespace 实践小项目_俄罗斯方块
             //添加纵向的固定墙壁
             for (int i = 0; i < Game.h - 5; i++)
             {
-                fixedMaplist.Add(new GameObject(0, i));
-                fixedMaplist.Add(new GameObject(((int)Game.w / 2) * 2 - 2, i));
+                fixedMaplist.Add(new GameObject(new Position(0, i)));
+                fixedMaplist.Add(new GameObject(new Position((Game.w / 2) * 2 - 2, i)));
             }
 
             //添加底部横向固定墙壁
-            for (int i = 0; i < ((int)Game.w / 2) * 2; i += 2)
+            for (int i = 0; i < (Game.w / 2) * 2; i += 2)
             {
-                fixedMaplist.Add(new GameObject(i, Game.h - 5));
+                fixedMaplist.Add(new GameObject(new Position(i, Game.h - 5)));
             }
 
             //打印固定墙壁
@@ -64,11 +64,11 @@ namespace 实践小项目_俄罗斯方块
         //
         public void CheckWhetherRemoveHoriWall()
         {
-            if (dynMaplist != null && horiBrickAmt >= (int)Game.w / 2 - 2)
+            if (dynMaplist != null && horiBrickAmt >= Game.w / 2 - 2)
             {
                 foreach (GameObject item in dynMaplist)
                 {
-                    if(item.pos.PosY == Game.h - 5)
+                    if(item.pos.posY == Game.h - 5)
                     {
                         dynMaplist.Remove(item);
                     }

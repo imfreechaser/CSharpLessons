@@ -4,17 +4,8 @@ using System.Text;
 
 namespace 实践小项目_俄罗斯方块
 {
-    enum BrickShape
+    interface IPrint
     {
-        a,
-        b,
-        c,
-        d,
-        e,
-        f
-    }
-    class Brick
-    {
-
+        void Print();
     }
 }

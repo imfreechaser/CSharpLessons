@@ -10,34 +10,33 @@ namespace 实践小项目_俄罗斯方块
     struct Position
     {
         public int posX;
-        public int PosY;
+        public int posY;
 
         public Position(int x, int y)
         {
             posX = x;
-            PosY = y;
+            posY = y;
         }
     }
 
     /// <summary>
     /// 小方块类
     /// </summary>
-    class GameObject
+    class GameObject:IPrint
     {
         public Position pos;
-        string basicShape = "■";
         
         //绘制小方块方法
         //
         public void Print()
         {
-            Console.SetCursorPosition(pos.posX,pos.PosY);
-            Console.Write(basicShape);
+            Console.SetCursorPosition(pos.posX,pos.posY);
+            Console.Write("■");
         }
 
-        public GameObject(int x,int y)
+        public GameObject(Position pos)
         {
-            pos = new Position(x,y);
+            this.pos = pos;
         }
     }
 }
