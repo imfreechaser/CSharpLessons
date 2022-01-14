@@ -17,6 +17,21 @@ namespace 实践小项目_俄罗斯方块
             posX = x;
             posY = y;
         }
+
+        //判断位置是否相等运算符重载
+        //
+        public static bool operator == (Position p1, Position p2)
+        {
+            if (p1.posX == p2.posX && p1.posY == p2.posY)
+                return true;
+            return false;
+        }
+        public static bool operator != (Position p1, Position p2)
+        {
+            if (p1.posX == p2.posX && p1.posY == p2.posY)
+                return false;
+            return true;
+        }
     }
 
     /// <summary>

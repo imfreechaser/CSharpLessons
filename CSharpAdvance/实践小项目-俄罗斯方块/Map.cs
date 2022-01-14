@@ -8,12 +8,13 @@ namespace 实践小项目_俄罗斯方块
     {
         //地图数据集合
         //
-        List<GameObject> fixedMaplist;
-        List<GameObject> dynMaplist;
+        public static List<GameObject> fixedMaplist;
+        public static List<GameObject> dynMaplist;
 
         //地图行砖块个数
         //
         int horiBrickAmt;
+        int topPosY;
 
         //绘制固定墙壁方法
         //
@@ -44,35 +45,77 @@ namespace 实践小项目_俄罗斯方块
         public void AddDynWall(GameObject[] gameObjects)
         {
             //改变动态墙壁颜色
-            Console.ForegroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.Cyan;
 
             //添加小方块到动态墙壁地图中
             dynMaplist.AddRange(gameObjects);
 
-            //打印动态添加的小方块
+            //打印动态添加的小方块,更新动态墙壁的最高行位置
+            int topY = topPosY;
             foreach (GameObject item in dynMaplist)
             {
                 item.Print();
+                if(item.pos.posY < topY)
+                {
+                    topY = item.pos.posY;
+                }
             }
-
-            //将新砖块最底层的个数添加到horiBrickAmt里
-            //
-
+            topPosY = topY;
+           
         }
 
         //判断是否移除整层动态墙壁
         //
         public void CheckWhetherRemoveHoriWall()
         {
-            if (dynMaplist != null && horiBrickAmt >= Game.w / 2 - 2)
+            if (dynMaplist != null)
             {
-                foreach (GameObject item in dynMaplist)
+                //从topPosY检查到Game.h - 6，查看每行是否铺满
+                while(topPosY <= Game.h - 6)
                 {
-                    if(item.pos.posY == Game.h - 5)
+                    horiBrickAmt = 0;
+                    for (int i = 0; i < dynMaplist.Count; i++)
                     {
-                        dynMaplist.Remove(item);
+                        if (dynMaplist[i].pos.posY == topPosY)
+                            horiBrickAmt++;
                     }
+                    //如果铺满
+                    if (horiBrickAmt == Game.w / 2 - 2)
+                    {
+                        //清除该行
+                        for (int i = 0; i < dynMaplist.Count; i++)
+                        {
+                            if (dynMaplist[i].pos.posY == topPosY)
+                            {
+                                Console.SetCursorPosition(dynMaplist[i].pos.posX, dynMaplist[i].pos.posY);
+                                Console.Write("  ");
+
+                                dynMaplist.Remove(dynMaplist[i]);
+                                i--;
+                            }
+                        }
+                        //该行上方的墙壁全部下移一行
+                        for (int i = 0; i < dynMaplist.Count; i++)
+                        {
+                            if (dynMaplist[i].pos.posY < topPosY)
+                            {
+                                Console.SetCursorPosition(dynMaplist[i].pos.posX, dynMaplist[i].pos.posY);
+                                Console.Write("  ");
+
+                                dynMaplist[i].pos.posY++;
+                                dynMaplist[i].Print();
+                            }
+                        }
+                    }
+
+                    topPosY++;
                 }
+                //重新打印一次动态墙壁
+                //foreach (GameObject item in dynMaplist)
+                //{
+                //    item.Print();
+                //}
+                
             }
         }
 
@@ -84,6 +127,7 @@ namespace 实践小项目_俄罗斯方块
             dynMaplist = new List<GameObject>();
 
             horiBrickAmt = 0;
+            topPosY = Game.h - 5;
         }
     }
 }

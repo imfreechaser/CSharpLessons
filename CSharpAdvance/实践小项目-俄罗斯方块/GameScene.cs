@@ -23,6 +23,7 @@ namespace 实践小项目_俄罗斯方块
                 //产生方块
                 bm.ProduceBrick();
 
+                //方块下落过程循环
                 while (!bm.TouchBotWall())
                 {
                     Thread.Sleep(sleepTime);
@@ -30,7 +31,14 @@ namespace 实践小项目_俄罗斯方块
                     bm.MoveDown();
                     bm.Print();
                 }
-                //Console.ReadKey();
+
+                //地图添加动态墙壁
+                map.AddDynWall(bm.bricks);
+
+                Thread.Sleep(100);
+
+                //判断动态墙壁是否可消除
+                map.CheckWhetherRemoveHoriWall();
             }
             
         }
@@ -40,7 +48,7 @@ namespace 实践小项目_俄罗斯方块
             map = new Map();
             map.PrintFixedWall();
             bm = new BrickManager();
-            sleepTime = 1000;
+            sleepTime = 500;
         }
     }
 }
