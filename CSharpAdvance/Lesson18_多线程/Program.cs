@@ -76,6 +76,7 @@ namespace Lesson18_多线程
         //改变方向
         public static void ChangeDir()
         {
+
             while (true)
             {
                 switch (Console.ReadKey(true).Key)

@@ -96,15 +96,19 @@ namespace 实践小项目_俄罗斯方块
                 switch (Console.ReadKey(true).Key)
                 {
                     case ConsoleKey.LeftArrow:
-                        if(brickInfo.leftPosX > 2 && !TouchLDynWall())
+                        instantPos.posX -= 2;
+                        //边界控制
+                        if (CheckTouchLRWall(instantPos.posX - bricks[0].pos.posX, true))
                         {
-                            instantPos.posX -= 2;
+                            instantPos.posX += 2;
                         }
                         break;
                     case ConsoleKey.RightArrow:
-                        if((brickInfo.rightPosX < (Game.w / 2) * 2 - 4) && !TouchRDynWall())
+                        instantPos.posX += 2;
+                        //边界控制
+                        if (CheckTouchLRWall(instantPos.posX - bricks[0].pos.posX, false))
                         {
-                            instantPos.posX += 2;
+                            instantPos.posX -= 2;
                         }
                         break;
                     case ConsoleKey.UpArrow:
@@ -113,6 +117,7 @@ namespace 实践小项目_俄罗斯方块
                         {
                             dir = 1;
                         }
+                        ChangeDirHoriModify();
                         break;
                     case ConsoleKey.DownArrow:
                         GameScene.sleepTime = 100;
@@ -146,38 +151,67 @@ namespace 实践小项目_俄罗斯方块
             return false;
         }
 
-        //判断方块左侧和动态墙壁接触
-        //
-        public bool TouchLDynWall()
+        //平移边界控制
+        //判断方块左右两侧和动态墙壁接触
+        public bool CheckTouchLRWall(int deltaX, bool left)
         {
-            Position pL;
+            Position p;
             for (int i = 0; i < bricks.Length; i++)
             {
-                pL = new Position(bricks[i].pos.posX - 2, bricks[i].pos.posY);
+                p = new Position(bricks[i].pos.posX + deltaX, bricks[i].pos.posY);
+                if (left)
+                {
+                    if (p.posX <= 0)
+                        return true;
+                }
+                if (!left)
+                {
+                    if (p.posX >= (Game.w / 2) * 2 - 2)
+                        return true;
+                }
                 for (int j = 0; j < Map.dynMaplist.Count; j++)
                 {
-                    if (pL == Map.dynMaplist[j].pos)
+                    if (p == Map.dynMaplist[j].pos)
                         return true;
                 }
             }
             return false;
         }
 
-        //判断方块右侧和动态墙壁接触
-        //
-        public bool TouchRDynWall()
+        //变方向边界控制
+        //超出边界时横向位移修正
+        public void ChangeDirHoriModify()
         {
-            Position pR;
-            for (int i = 0; i < bricks.Length; i++)
+            switch (brickShape)
             {
-                pR = new Position(bricks[i].pos.posX + 2, bricks[i].pos.posY);
-                for (int j = 0; j < Map.dynMaplist.Count; j++)
-                {
-                    if (pR == Map.dynMaplist[j].pos)
-                        return true;
-                }
+                case E_BrickShape.a:
+                    break;
+                case E_BrickShape.b:
+                    switch (dir)
+                    {
+                        case 2:
+                            if (instantPos.posX < 6)
+                                instantPos.posX = 6;
+                            break;
+                        case 4:
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case E_BrickShape.c:
+                    break;
+                case E_BrickShape.d:
+                    break;
+                case E_BrickShape.e:
+                    break;
+                case E_BrickShape.f:
+                    break;
+                case E_BrickShape.g:
+                    break;
+                default:
+                    break;
             }
-            return false;
         }
 
         public BrickManager()

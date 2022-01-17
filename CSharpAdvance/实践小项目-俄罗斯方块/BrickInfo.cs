@@ -24,9 +24,9 @@ namespace 实践小项目_俄罗斯方块
         //
         public Position[] positions = new Position[4];
 
-        //方块的左、下、右位置极值
+        //方块的下位置极值
         //
-        public int leftPosX, rightPosX, bottomposY, topPosY;
+        public int bottomposY;
 
         //改变方块位置、方向
         //
@@ -214,35 +214,19 @@ namespace 实践小项目_俄罗斯方块
                     break;
             }
 
-            //更新方块的左、下、右、上位置极值
+            //更新方块的下位置极值
             for (int i = 0; i < positions.Length; i++)
             {
                 if(i == 0)
                 {
-                    leftPosX = positions[i].posX;
-                    rightPosX = positions[i].posX;
                     bottomposY = positions[i].posY;
-                    topPosY = positions[i].posY;
                 }
                 else
                 {
-                    if (positions[i].posX < leftPosX)
-                    {
-                        leftPosX = positions[i].posX;
-                    }
-                    if (positions[i].posX > rightPosX)
-                    {
-                        rightPosX = positions[i].posX;
-                    }
                     if(positions[i].posY > bottomposY)
                     {
                         bottomposY = positions[i].posY;
                     }
-                    if(positions[i].posY < topPosY)
-                    {
-                        topPosY = positions[i].posY;
-                    }
-
                 }
             }
         }
