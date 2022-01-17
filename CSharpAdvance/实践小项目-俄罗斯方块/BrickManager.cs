@@ -184,30 +184,113 @@ namespace 实践小项目_俄罗斯方块
         {
             switch (brickShape)
             {
-                case E_BrickShape.a:
-                    break;
                 case E_BrickShape.b:
                     switch (dir)
                     {
                         case 2:
+                            //左边界控制
                             if (instantPos.posX < 6)
                                 instantPos.posX = 6;
+                            //右边界控制
+                            if (instantPos.posX >= (Game.w / 2) * 2 - 4)
+                                instantPos.posX = (Game.w / 2) * 2 - 6;
                             break;
                         case 4:
+                            //左边界控制
+                            if (instantPos.posX < 4)
+                                instantPos.posX = 4;
+                            //右边界控制
+                            if (instantPos.posX >= (Game.w / 2) * 2 - 6)
+                                instantPos.posX = (Game.w / 2) * 2 - 8;
                             break;
                         default:
                             break;
                     }
                     break;
                 case E_BrickShape.c:
+                    switch (dir)
+                    {
+                        case 1:
+                            //左边界控制
+                            if (instantPos.posX < 4)
+                                instantPos.posX = 4;
+                            break;
+                        case 3:
+                            //右边界控制
+                            if (instantPos.posX >= (Game.w / 2) * 2 - 4)
+                                instantPos.posX = (Game.w / 2) * 2 - 6;
+                            break;
+                        default:
+                            break;
+                    }
                     break;
                 case E_BrickShape.d:
+                    switch (dir)
+                    {
+                        case 2:
+                            //左边界控制
+                            if (instantPos.posX < 4)
+                                instantPos.posX = 4;
+                            break;
+                        case 4:
+                            //右边界控制
+                            if (instantPos.posX >= (Game.w / 2) * 2 - 4)
+                                instantPos.posX = (Game.w / 2) * 2 - 6;
+                            break;
+                        default:
+                            break;
+                    }
                     break;
                 case E_BrickShape.e:
+                    switch (dir)
+                    {
+                        case 2:
+                            //右边界控制
+                            if (instantPos.posX >= (Game.w / 2) * 2 - 4)
+                                instantPos.posX = (Game.w / 2) * 2 - 6;
+                            break;
+                        case 4:
+                            //左边界控制
+                            if (instantPos.posX < 4)
+                                instantPos.posX = 4;
+                            break;
+                        default:
+                            break;
+                    }
                     break;
                 case E_BrickShape.f:
+                    switch (dir)
+                    {
+                        case 2:
+                            //右边界控制
+                            if (instantPos.posX >= (Game.w / 2) * 2 - 4)
+                                instantPos.posX = (Game.w / 2) * 2 - 6;
+                            break;
+                        case 4:
+                            //左边界控制
+                            if (instantPos.posX < 4)
+                                instantPos.posX = 4;
+                            break;
+                        default:
+                            break;
+                    }
                     break;
                 case E_BrickShape.g:
+                    switch (dir)
+                    {
+                        case 2:
+                            //左边界控制
+                            if (instantPos.posX < 4)
+                                instantPos.posX = 4;
+                            break;
+                        case 4:
+                            //右边界控制
+                            if (instantPos.posX >= (Game.w / 2) * 2 - 4)
+                                instantPos.posX = (Game.w / 2) * 2 - 6;
+                            break;
+                        default:
+                            break;
+                    }
                     break;
                 default:
                     break;

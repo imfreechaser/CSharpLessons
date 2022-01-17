@@ -48,7 +48,7 @@ namespace 实践小项目_俄罗斯方块
             map = new Map();
             map.PrintFixedWall();
             bm = new BrickManager();
-            sleepTime = 500;
+            sleepTime = 300;
         }
     }
 }
