@@ -51,17 +51,14 @@ namespace 实践小项目_俄罗斯方块
             dynMaplist.AddRange(gameObjects);
 
             //打印动态添加的小方块,更新动态墙壁的最高行位置
-            int topY = topPosY;
             foreach (GameObject item in dynMaplist)
             {
                 item.Print();
-                if(item.pos.posY < topY)
+                if(item.pos.posY < topPosY)
                 {
-                    topY = item.pos.posY;
+                    topPosY = item.pos.posY;
                 }
             }
-            topPosY = topY;
-           
         }
 
         //判断是否移除整层动态墙壁
@@ -70,22 +67,23 @@ namespace 实践小项目_俄罗斯方块
         {
             if (dynMaplist != null)
             {
-                //从topPosY检查到Game.h - 6，查看每行是否铺满
-                while(topPosY <= Game.h - 6)
+                //添加检查索引，从topPosY检查到Game.h - 6，查看每行是否铺满
+                int indexY = topPosY;
+                while(indexY <= Game.h - 6)
                 {
                     horiBrickAmt = 0;
                     for (int i = 0; i < dynMaplist.Count; i++)
                     {
-                        if (dynMaplist[i].pos.posY == topPosY)
+                        if (dynMaplist[i].pos.posY == indexY)
                             horiBrickAmt++;
                     }
-                    //如果铺满
+                    //如果该行铺满
                     if (horiBrickAmt == Game.w / 2 - 2)
                     {
                         //清除该行
                         for (int i = 0; i < dynMaplist.Count; i++)
                         {
-                            if (dynMaplist[i].pos.posY == topPosY)
+                            if (dynMaplist[i].pos.posY == indexY)
                             {
                                 Console.SetCursorPosition(dynMaplist[i].pos.posX, dynMaplist[i].pos.posY);
                                 Console.Write("  ");
@@ -94,31 +92,43 @@ namespace 实践小项目_俄罗斯方块
                                 i--;
                             }
                         }
-                        //该行上方的墙壁全部下移一行
+                        //该行上方的墙壁全部擦除
                         for (int i = 0; i < dynMaplist.Count; i++)
                         {
-                            if (dynMaplist[i].pos.posY < topPosY)
+                            if (dynMaplist[i].pos.posY < indexY)
                             {
                                 Console.SetCursorPosition(dynMaplist[i].pos.posX, dynMaplist[i].pos.posY);
                                 Console.Write("  ");
-
+                            }
+                        }
+                        //该行上方的墙壁全部下移一行
+                        for (int i = 0; i < dynMaplist.Count; i++)
+                        {
+                            if (dynMaplist[i].pos.posY < indexY)
+                            {
                                 dynMaplist[i].pos.posY++;
                                 dynMaplist[i].Print();
                             }
                         }
+                        //最高行位置下移
+                        topPosY++;
                     }
-
-                    topPosY++;
-                }
-                //重新打印一次动态墙壁
-                //foreach (GameObject item in dynMaplist)
-                //{
-                //    item.Print();
-                //}
-                
+                    //检查索引下移
+                    indexY++;
+                }            
             }
         }
 
+        //死亡判断
+        //
+        public void CheckIsDead()
+        {
+            if (topPosY <= 0)
+            {
+                GameScene.Dead = true;
+                Game.gameState = E_GameState.End;
+            }
+        }
         public Map()
         {
             Console.ForegroundColor = ConsoleColor.Red;

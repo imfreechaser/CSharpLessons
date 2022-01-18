@@ -10,6 +10,7 @@ namespace 实践小项目_俄罗斯方块
         Map map;
         BrickManager bm;
         public static int sleepTime;
+        public static bool Dead;
         
         public void Update()
         {
@@ -18,7 +19,7 @@ namespace 实践小项目_俄罗斯方块
             tUserInput.IsBackground = true;
             tUserInput.Start();
 
-            while (true)
+            while (!Dead)
             {
                 //产生方块
                 bm.ProduceBrick();
@@ -39,8 +40,12 @@ namespace 实践小项目_俄罗斯方块
 
                 //判断动态墙壁是否可消除
                 map.CheckWhetherRemoveHoriWall();
+
+                //死亡判断
+                map.CheckIsDead();
             }
-            
+
+            tUserInput = null;
         }
 
         public GameScene()

@@ -26,13 +26,17 @@ namespace 实践小项目_俄罗斯方块
         //
         int dir;
 
+        //线程锁所需引用变量
+        //
+        object o;
+
         //随机创建方块方法
         //
         public void ProduceBrick()
         {
             //随机决定形状、方向
             Random r = new Random();
-            brickShape = (E_BrickShape)r.Next(0,7);
+            brickShape = (E_BrickShape)r.Next(2,3);
             dir = r.Next(1,5);
 
             //重置位置信息
@@ -63,10 +67,13 @@ namespace 实践小项目_俄罗斯方块
         //砖块下落方法
         //
         public void MoveDown()
-        { 
-            //改变原点方块的位置
-            instantPos.posY = bricks[0].pos.posY + 1; 
-
+        {
+            //lock (o)
+            //{
+                //改变原点方块的位置
+                instantPos.posY = bricks[0].pos.posY + 1;
+            //}
+            
             //改变方块信息
             brickInfo.Move(brickShape,dir, instantPos);
 
@@ -91,7 +98,7 @@ namespace 实践小项目_俄罗斯方块
         //包括横向移动、切换方向、加速下落
         public void UserInput()
         {
-            while (true)
+            while (Game.gameState == E_GameState.Run)
             {
                 switch (Console.ReadKey(true).Key)
                 {
@@ -120,7 +127,7 @@ namespace 实践小项目_俄罗斯方块
                         ChangeDirHoriModify();
                         break;
                     case ConsoleKey.DownArrow:
-                        GameScene.sleepTime = 100;
+                        //GameScene.sleepTime = 100;
                         break;
                     default:
                         break;
@@ -159,6 +166,7 @@ namespace 实践小项目_俄罗斯方块
             for (int i = 0; i < bricks.Length; i++)
             {
                 p = new Position(bricks[i].pos.posX + deltaX, bricks[i].pos.posY);
+                //固定边界判断
                 if (left)
                 {
                     if (p.posX <= 0)
@@ -169,6 +177,7 @@ namespace 实践小项目_俄罗斯方块
                     if (p.posX >= (Game.w / 2) * 2 - 2)
                         return true;
                 }
+                //动态边界判断
                 for (int j = 0; j < Map.dynMaplist.Count; j++)
                 {
                     if (p == Map.dynMaplist[j].pos)
@@ -182,124 +191,164 @@ namespace 实践小项目_俄罗斯方块
         //超出边界时横向位移修正
         public void ChangeDirHoriModify()
         {
-            switch (brickShape)
-            {
-                case E_BrickShape.b:
-                    switch (dir)
-                    {
-                        case 2:
-                            //左边界控制
-                            if (instantPos.posX < 6)
-                                instantPos.posX = 6;
-                            //右边界控制
-                            if (instantPos.posX >= (Game.w / 2) * 2 - 4)
-                                instantPos.posX = (Game.w / 2) * 2 - 6;
-                            break;
-                        case 4:
-                            //左边界控制
-                            if (instantPos.posX < 4)
-                                instantPos.posX = 4;
-                            //右边界控制
-                            if (instantPos.posX >= (Game.w / 2) * 2 - 6)
-                                instantPos.posX = (Game.w / 2) * 2 - 8;
-                            break;
-                        default:
-                            break;
-                    }
-                    break;
-                case E_BrickShape.c:
-                    switch (dir)
-                    {
-                        case 1:
-                            //左边界控制
-                            if (instantPos.posX < 4)
-                                instantPos.posX = 4;
-                            break;
-                        case 3:
-                            //右边界控制
-                            if (instantPos.posX >= (Game.w / 2) * 2 - 4)
-                                instantPos.posX = (Game.w / 2) * 2 - 6;
-                            break;
-                        default:
-                            break;
-                    }
-                    break;
-                case E_BrickShape.d:
-                    switch (dir)
-                    {
-                        case 2:
-                            //左边界控制
-                            if (instantPos.posX < 4)
-                                instantPos.posX = 4;
-                            break;
-                        case 4:
-                            //右边界控制
-                            if (instantPos.posX >= (Game.w / 2) * 2 - 4)
-                                instantPos.posX = (Game.w / 2) * 2 - 6;
-                            break;
-                        default:
-                            break;
-                    }
-                    break;
-                case E_BrickShape.e:
-                    switch (dir)
-                    {
-                        case 2:
-                            //右边界控制
-                            if (instantPos.posX >= (Game.w / 2) * 2 - 4)
-                                instantPos.posX = (Game.w / 2) * 2 - 6;
-                            break;
-                        case 4:
-                            //左边界控制
-                            if (instantPos.posX < 4)
-                                instantPos.posX = 4;
-                            break;
-                        default:
-                            break;
-                    }
-                    break;
-                case E_BrickShape.f:
-                    switch (dir)
-                    {
-                        case 2:
-                            //右边界控制
-                            if (instantPos.posX >= (Game.w / 2) * 2 - 4)
-                                instantPos.posX = (Game.w / 2) * 2 - 6;
-                            break;
-                        case 4:
-                            //左边界控制
-                            if (instantPos.posX < 4)
-                                instantPos.posX = 4;
-                            break;
-                        default:
-                            break;
-                    }
-                    break;
-                case E_BrickShape.g:
-                    switch (dir)
-                    {
-                        case 2:
-                            //左边界控制
-                            if (instantPos.posX < 4)
-                                instantPos.posX = 4;
-                            break;
-                        case 4:
-                            //右边界控制
-                            if (instantPos.posX >= (Game.w / 2) * 2 - 4)
-                                instantPos.posX = (Game.w / 2) * 2 - 6;
-                            break;
-                        default:
-                            break;
-                    }
-                    break;
-                default:
-                    break;
-            }
+            //lock (this)
+            //{
+                switch (brickShape)
+                {
+                    case E_BrickShape.b:
+                        switch (dir)
+                        {
+                            case 1:
+                                //底边界控制
+                                if(instantPos.posY >= Game.h - 7)
+                                    instantPos.posY = Game.h - 9;   
+                                break;
+                            case 2:
+                                //左边界控制
+                                if (instantPos.posX < 6)
+                                    instantPos.posX = 6;
+                                //右边界控制
+                                if (instantPos.posX >= (Game.w / 2) * 2 - 4)
+                                    instantPos.posX = (Game.w / 2) * 2 - 6;
+                                break;
+                            case 3:
+                                //底边界控制
+                                if (instantPos.posY >= Game.h - 6)
+                                    instantPos.posY = Game.h - 8;
+                                break;
+                            case 4:
+                                //左边界控制
+                                if (instantPos.posX < 4)
+                                    instantPos.posX = 4;
+                                //右边界控制
+                                if (instantPos.posX >= (Game.w / 2) * 2 - 6)
+                                    instantPos.posX = (Game.w / 2) * 2 - 8;
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case E_BrickShape.c:
+                        switch (dir)
+                        {
+                            case 1:
+                                //左边界控制
+                                if (instantPos.posX < 4)
+                                    instantPos.posX = 4;
+                                break;
+                            case 3:
+                                //右边界控制
+                                if (instantPos.posX >= (Game.w / 2) * 2 - 4)
+                                    instantPos.posX = (Game.w / 2) * 2 - 6;
+                                break;
+                            case 4:
+                                //底边界控制
+                                if (instantPos.posY >= Game.h - 6)
+                                    instantPos.posY = (Game.w / 2) * 2 - 8;
+                            break; 
+                            default:
+                                break;
+                        }
+                        break;
+                    case E_BrickShape.d:
+                        switch (dir)
+                        {
+                            case 1:
+                                //底边界控制
+                                if (instantPos.posY >= Game.h - 6)
+                                    instantPos.posY = Game.h - 8;
+                                break;
+                            case 2:
+                                //左边界控制
+                                if (instantPos.posX < 4)
+                                    instantPos.posX = 4;
+                                break;
+                            case 4:
+                                //右边界控制
+                                if (instantPos.posX >= (Game.w / 2) * 2 - 4)
+                                    instantPos.posX = (Game.w / 2) * 2 - 6;
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case E_BrickShape.e:
+                        switch (dir)
+                        {
+                            case 2:
+                                //右边界控制
+                                if (instantPos.posX >= (Game.w / 2) * 2 - 4)
+                                    instantPos.posX = (Game.w / 2) * 2 - 6;
+                                break;
+                            case 3:
+                                //底边界控制
+                                if (instantPos.posY >= Game.h - 6)
+                                    instantPos.posY = Game.h - 8;
+                                break;
+                            case 4:
+                                //左边界控制
+                                if (instantPos.posX < 4)
+                                    instantPos.posX = 4;
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case E_BrickShape.f:
+                        switch (dir)
+                        {
+                            case 2:
+                                //右边界控制
+                                if (instantPos.posX >= (Game.w / 2) * 2 - 4)
+                                    instantPos.posX = (Game.w / 2) * 2 - 6;
+                                break;
+                            case 3:
+                                //底边界控制
+                                if (instantPos.posY >= Game.h - 6)
+                                    instantPos.posY = Game.h - 8;
+                                break;
+                            case 4:
+                                //左边界控制
+                                if (instantPos.posX < 4)
+                                    instantPos.posX = 4;
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case E_BrickShape.g:
+                        switch (dir)
+                        {
+                            case 1:
+                                //底边界控制
+                                if (instantPos.posY >= Game.h - 6)
+                                    instantPos.posY = Game.h - 8;
+                                break;
+                            case 2:
+                                //左边界控制
+                                if (instantPos.posX < 4)
+                                    instantPos.posX = 4;
+                                break;
+                            case 4:
+                                //右边界控制
+                                if (instantPos.posX >= (Game.w / 2) * 2 - 4)
+                                    instantPos.posX = (Game.w / 2) * 2 - 6;
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            //}
+            
         }
 
         public BrickManager()
         {
             bricks = new GameObject[4];
+            o = new object();
         }
     }
 }

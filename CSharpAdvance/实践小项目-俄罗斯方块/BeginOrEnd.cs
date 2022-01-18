@@ -22,7 +22,7 @@ namespace 实践小项目_俄罗斯方块
             //开始/结束场景内循环
             while (!brkInnerLoop)
             {
-                Console.SetCursorPosition(Game.w / 2 - 4, Game.h / 5 + 4);
+                Console.SetCursorPosition(Game.w / 2 - 4, Game.h / 5 +  4);
                 Console.ForegroundColor = selectedBtnId == 1 ? ConsoleColor.Red : ConsoleColor.White;
                 Console.Write(btn1);
 
