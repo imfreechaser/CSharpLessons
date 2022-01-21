@@ -1,0 +1,13 @@
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\俄罗斯方块-优化版\bin\Debug\netcoreapp3.1\俄罗斯方块-优化版.exe
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\俄罗斯方块-优化版\bin\Debug\netcoreapp3.1\俄罗斯方块-优化版.deps.json
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\俄罗斯方块-优化版\bin\Debug\netcoreapp3.1\俄罗斯方块-优化版.runtimeconfig.json
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\俄罗斯方块-优化版\bin\Debug\netcoreapp3.1\俄罗斯方块-优化版.runtimeconfig.dev.json
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\俄罗斯方块-优化版\bin\Debug\netcoreapp3.1\俄罗斯方块-优化版.dll
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\俄罗斯方块-优化版\bin\Debug\netcoreapp3.1\俄罗斯方块-优化版.pdb
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\俄罗斯方块-优化版\obj\Debug\netcoreapp3.1\俄罗斯方块-优化版.csprojAssemblyReference.cache
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\俄罗斯方块-优化版\obj\Debug\netcoreapp3.1\俄罗斯方块-优化版.AssemblyInfoInputs.cache
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\俄罗斯方块-优化版\obj\Debug\netcoreapp3.1\俄罗斯方块-优化版.AssemblyInfo.cs
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\俄罗斯方块-优化版\obj\Debug\netcoreapp3.1\俄罗斯方块-优化版.csproj.CoreCompileInputs.cache
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\俄罗斯方块-优化版\obj\Debug\netcoreapp3.1\俄罗斯方块-优化版.dll
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\俄罗斯方块-优化版\obj\Debug\netcoreapp3.1\俄罗斯方块-优化版.pdb
+C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\俄罗斯方块-优化版\obj\Debug\netcoreapp3.1\俄罗斯方块-优化版.genruntimeconfig.cache

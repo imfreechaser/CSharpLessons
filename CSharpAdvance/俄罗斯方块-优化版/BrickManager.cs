@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace 实践小项目_俄罗斯方块
+namespace 俄罗斯方块_优化版
 {
     class BrickManager : IPrint
     {
@@ -64,12 +64,9 @@ namespace 实践小项目_俄罗斯方块
         //
         public void MoveDown()
         {
-            //lock (o)
-            //{
-                //改变原点方块的位置
-                instantPos.posY = bricks[0].pos.posY + 1;
-            //}
-            
+            //改变原点方块的位置
+            instantPos.posY = bricks[0].pos.posY + 1;
+
             //改变方块信息
             brickInfo.Move(brickShape,dir, instantPos);
 
@@ -88,7 +85,7 @@ namespace 实践小项目_俄罗斯方块
             {
                 bricks[i].Print();
             }
-        }
+        } 
 
         //用户输入方法
         //包括横向移动、切换方向、加速下落
@@ -123,13 +120,13 @@ namespace 实践小项目_俄罗斯方块
                         ChangeDirHoriModify();
                         break;
                     case ConsoleKey.DownArrow:
-                        //GameScene.sleepTime = 100;
+                        MoveDown();
                         break;
                     default:
                         break;
                 }
             }
-        }
+        } 
 
         //判断方块触底
         //

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace 实践小项目_俄罗斯方块
+namespace 俄罗斯方块_优化版
 {
     class Map
     {
@@ -136,7 +136,6 @@ namespace 实践小项目_俄罗斯方块
             fixedMaplist = new List<GameObject>();
             dynMaplist = new List<GameObject>();
 
-            
             topPosY = Game.h - 5;
         }
     }

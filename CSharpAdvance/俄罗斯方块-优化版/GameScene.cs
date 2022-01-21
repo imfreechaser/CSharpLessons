@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 
-namespace 实践小项目_俄罗斯方块
+namespace 俄罗斯方块_优化版
 {
     class GameScene : ISceneUpdate
     {
@@ -57,7 +57,7 @@ namespace 实践小项目_俄罗斯方块
             map = new Map();
             map.PrintFixedWall();
             bm = new BrickManager();
-            sleepTime = 200;
+            sleepTime = 500;
             instantScore = 0;
             printScore();
         }

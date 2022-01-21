@@ -53,7 +53,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lesson21_迭代器", "Lesso
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lesson23_特殊语法", "Lesson23_特殊语法\Lesson23_特殊语法.csproj", "{83296E59-CD77-47D9-A89D-54048110509E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "实践小项目-俄罗斯方块", "实践小项目-俄罗斯方块\实践小项目-俄罗斯方块.csproj", "{44B035D6-AF66-4825-BEED-4A707CA4D3C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "实践小项目-俄罗斯方块", "实践小项目-俄罗斯方块\实践小项目-俄罗斯方块.csproj", "{44B035D6-AF66-4825-BEED-4A707CA4D3C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "俄罗斯方块-优化版", "俄罗斯方块-优化版\俄罗斯方块-优化版.csproj", "{A0F451FE-50B6-48FB-A754-626C28097CF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -165,6 +167,10 @@ Global
 		{44B035D6-AF66-4825-BEED-4A707CA4D3C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44B035D6-AF66-4825-BEED-4A707CA4D3C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44B035D6-AF66-4825-BEED-4A707CA4D3C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0F451FE-50B6-48FB-A754-626C28097CF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0F451FE-50B6-48FB-A754-626C28097CF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0F451FE-50B6-48FB-A754-626C28097CF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0F451FE-50B6-48FB-A754-626C28097CF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
