@@ -7,68 +7,85 @@ namespace 俄罗斯方块_优化版
 {
     class GameScene : ISceneUpdate
     {
-        Map map;
-        BrickManager bm;
-        public static int sleepTime;
+        Map map = new Map();
+        BrickManager bm = new BrickManager();
         public static bool Dead;
-        public static int instantScore;
         
         public void Update()
         {
-            //添加新线程
-            Thread tUserInput = new Thread(bm.UserInput);
-            tUserInput.IsBackground = true;
-            tUserInput.Start();
-
-            while (!Dead)
+            lock (bm)
             {
-                //产生方块
-                bm.ProduceBrick();
-
-                //方块下落过程循环
-                while (!bm.TouchBotWall())
+                //方块下落
+                if (bm.CanMoveDown(map))
                 {
-                    Thread.Sleep(sleepTime);
-                    bm.ClearLastFrame();
                     bm.MoveDown();
-                    bm.Print();
                 }
-
-                //地图添加动态墙壁
-                map.AddDynWall(bm.bricks);
-
-                Thread.Sleep(100);
-
-                //判断动态墙壁是否可消除
-                map.CheckWhetherRemoveHoriWall();
-
-                //打印分数
-                printScore();
-
-                //死亡判断
-                map.CheckIsDead();
             }
+            Thread.Sleep(200);
 
-            tUserInput = null;
+            //死亡后切换场景、暂停线程
+            if (Dead)
+            {
+                //此处必须先把输入线程暂停，才能切换场景
+                //因为若还检测到了按下键，那么在UserInput的下case里还会调用CanMoveDown方法，
+                //检测到满了以后又会调用地图的AddDynWall方法，此方法会把动态墙壁全部打印一次，若先切场景再关闭，那么打印的方块会呈现。
+                InputThread.Instance.UserInputEvent -= UserInput;
+                Game.ChangeScene(E_GameState.End);
+            }
         }
 
         public GameScene()
         {
-            map = new Map();
-            map.PrintFixedWall();
-            bm = new BrickManager();
-            sleepTime = 500;
-            instantScore = 0;
-            printScore();
+            //开启输入线程
+            InputThread.Instance.UserInputEvent += UserInput;
+
+            Dead = false;
+
+            //随机创建方块
+            bm.ProduceBrick();
+
+            //打印分数
+            map.printScore();
         }
 
-        public void printScore()
+        //用户输入方法
+        //包括横向移动、切换方向、加速下落
+        public void UserInput()
         {
-            Console.SetCursorPosition(2, Game.h - 3);
-            Console.Write("                           ");
-            Console.SetCursorPosition(2, Game.h - 3);
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.Write($"当前分数：{instantScore}");
+            if (Console.KeyAvailable == true)
+            {
+                lock (bm)
+                {
+                    switch (Console.ReadKey(true).Key)
+                    {
+                        case ConsoleKey.LeftArrow:
+                            if (bm.CanHoriMove(true, map))
+                                bm.HoriMove(true);
+                            break;
+                        case ConsoleKey.RightArrow:
+                            if (bm.CanHoriMove(false, map))
+                                bm.HoriMove(false);
+                            break;
+                        case ConsoleKey.A:
+                            if (bm.CanChangeDir(true, map))
+                                bm.ChangeDir(true);
+                            break;
+                        case ConsoleKey.D:
+                            if (bm.CanChangeDir(false, map))
+                                bm.ChangeDir(false);
+                            break;
+                        case ConsoleKey.DownArrow:
+                            if (bm.CanMoveDown(map))
+                                bm.MoveDown();
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+            }
         }
+
+        
     }
 }

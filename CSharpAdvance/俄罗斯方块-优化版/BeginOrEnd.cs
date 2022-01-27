@@ -14,19 +14,13 @@ namespace 俄罗斯方块_优化版
         //帧更新方法
         //
         public void Update()
-        {
-            //打印游戏标题
-            //不进入开始/结束场景的内循环
-            PrintTitle();
-
-            //开始/结束场景内循环
-            while (!brkInnerLoop)
-            {
-                Console.SetCursorPosition(Game.w / 2 - 4, Game.h / 5 +  4);
+        { 
+            //开始/结束场景内容
+                Console.SetCursorPosition(Game.w / 2 - 4, Game.h / 5 + 8);
                 Console.ForegroundColor = selectedBtnId == 1 ? ConsoleColor.Red : ConsoleColor.White;
                 Console.Write(btn1);
 
-                Console.SetCursorPosition(Game.w / 2 - 4, Game.h / 5 + 6);
+                Console.SetCursorPosition(Game.w / 2 - 4, Game.h / 5 + 10);
                 Console.ForegroundColor = selectedBtnId == 2 ? ConsoleColor.Red : ConsoleColor.White;
                 Console.Write(btn2);
 
@@ -53,7 +47,7 @@ namespace 俄罗斯方块_优化版
                         break;
                 }
             }  
-        }
+        
 
         //切换游戏状态枚举值方法
         //

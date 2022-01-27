@@ -25,51 +25,55 @@ namespace 俄罗斯方块_优化版
     class Game
     {
         /// <summary>
-        /// 当前游戏状态
-        /// </summary>
-        public static E_GameState gameState = E_GameState.Begin;
-        /// <summary>
         /// 控制台窗口宽高
         /// </summary>
         public const int w = 53, h = 35;
-        
-        // 游戏初始化
-        // 包含控制台的初始设置等内容
-        public void Init()
-        {
-            Console.SetWindowSize(w,h);
-            Console.CursorVisible = false;
-        }
+        /// <summary>
+        /// 当前游戏场景
+        /// </summary>
+        public static ISceneUpdate sceneState;
 
         //游戏开始运行方法
         //
         public void GameStart()
         {
+            //游戏大循环
             while (true)
             {
-                Console.Clear();
-                switch (gameState)
-                {
-                    case E_GameState.Begin:
-                        BeginOrEnd begin = new Begin();
-                        begin.Update();
-                        break;
-                    case E_GameState.Run:
-                        GameScene gs = new GameScene();
-                        gs.Update();
-                        break;
-                    case E_GameState.End:
-                        BeginOrEnd end = new End();
-                        end.Update();
-                        break;
-                    default:
-                        break;
-                }
+                sceneState.Update();
             }
         }
+
+        //切换游戏场景方法
+        //
+        public static void ChangeScene(E_GameState gameState)
+        {
+            Console.Clear();
+            switch (gameState)
+            {
+                case E_GameState.Begin:
+                    sceneState = new Begin();
+                    sceneState.Update();
+                    break;
+                case E_GameState.Run:
+                    sceneState = new GameScene();
+                    sceneState.Update();
+                    break;
+                case E_GameState.End:
+                    sceneState = new End();
+                    sceneState.Update();
+                    break;
+                default:
+                    break;
+            }
+        }
+
         public Game()
         {
-            Init();
+            Console.SetWindowSize(w, h);
+            Console.CursorVisible = false;
+
+            ChangeScene(E_GameState.Begin);
         }
     }
 }

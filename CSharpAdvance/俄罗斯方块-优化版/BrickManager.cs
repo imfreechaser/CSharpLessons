@@ -8,19 +8,19 @@ namespace 俄罗斯方块_优化版
     {
         //当前方块形状
         //
-        public E_BrickShape brickShape;
-
-        //方块当前位置
-        //
-        Position instantPos;
+        E_BrickShape brickShape;
 
         //方块信息
         //
         BrickInfo brickInfo;
 
+        //方块信息字典
+        //
+        Dictionary<E_BrickShape, BrickInfo> brickDic;
+
         //方块集合
         //
-        public GameObject[] bricks;
+        GameObject[] bricks;
 
         //当前方向id
         //
@@ -30,21 +30,23 @@ namespace 俄罗斯方块_优化版
         //
         public void ProduceBrick()
         {
-            //随机决定形状、方向
+            //随机决定形状
             Random r = new Random();
             brickShape = (E_BrickShape)r.Next(0,7);
-            dir = r.Next(1,5);
+
+            //提取方块信息对象
+            brickInfo = brickDic[brickShape];
+
+            //随机决定方向
+            dir = r.Next(0, brickInfo.BrickListCount);
 
             //重置位置信息
-            instantPos = new Position(Game.w / 2, 2);
+            bricks[0] = new GameObject(new Position(Game.w / 2, -4), brickShape);
 
-            //创建方块信息对象
-            brickInfo = new BrickInfo(brickShape,dir, instantPos);
-
-            //获取方块信息，创建方块并打印
-            for (int i = 0; i < bricks.Length; i++)
+            //提取方块位置信息
+            for (int i = 1; i < bricks.Length; i++)
             {
-                bricks[i] = new GameObject(brickInfo.positions[i]);
+                bricks[i] = new GameObject(bricks[0].pos + brickInfo[dir][i - 1], brickShape);
             }
             Print();
         }
@@ -55,25 +57,11 @@ namespace 俄罗斯方块_优化版
         {
             for (int i = 0; i < bricks.Length; i++)
             {
-                Console.SetCursorPosition(bricks[i].pos.posX, bricks[i].pos.posY);
-                Console.Write("  ");
-            }
-        }
-
-        //砖块下落方法
-        //
-        public void MoveDown()
-        {
-            //改变原点方块的位置
-            instantPos.posY = bricks[0].pos.posY + 1;
-
-            //改变方块信息
-            brickInfo.Move(brickShape,dir, instantPos);
-
-            //更新方块信息，创建方块并打印
-            for (int i = 0; i < bricks.Length; i++)
-            {
-                bricks[i].pos = brickInfo.positions[i];
+                if(bricks[i].pos.posY >= 0)
+                {
+                    Console.SetCursorPosition(bricks[i].pos.posX, bricks[i].pos.posY);
+                    Console.Write("  ");
+                }
             }
         }
 
@@ -87,260 +75,222 @@ namespace 俄罗斯方块_优化版
             }
         } 
 
-        //用户输入方法
-        //包括横向移动、切换方向、加速下落
-        public void UserInput()
+        //平移方块
+        //
+        public void HoriMove(bool left)
         {
-            while (Game.gameState == E_GameState.Run)
+            Position deltaP;
+            if (left)
+                deltaP = new Position(-2, 0);
+            else
+                deltaP = new Position(2, 0);
+
+            ClearLastFrame();
+
+            for (int i = 0; i < bricks.Length; i++)
             {
-                switch (Console.ReadKey(true).Key)
+                bricks[i].pos += deltaP;
+            }
+            Print();
+        }
+
+        //是否可平移判断
+        //
+        public bool CanHoriMove(bool left, Map map)
+        {
+            Position p;
+            if (left)
+            {
+                //左侧固定墙壁判断
+                for (int i = 0; i < bricks.Length; i++)
                 {
-                    case ConsoleKey.LeftArrow:
-                        instantPos.posX -= 2;
-                        //边界控制
-                        if (CheckTouchLRWall(instantPos.posX - bricks[0].pos.posX, true))
-                        {
-                            instantPos.posX += 2;
-                        }
-                        break;
-                    case ConsoleKey.RightArrow:
-                        instantPos.posX += 2;
-                        //边界控制
-                        if (CheckTouchLRWall(instantPos.posX - bricks[0].pos.posX, false))
-                        {
-                            instantPos.posX -= 2;
-                        }
-                        break;
-                    case ConsoleKey.UpArrow:
-                        dir++;
-                        if (dir > 4)
-                        {
-                            dir = 1;
-                        }
-                        ChangeDirHoriModify();
-                        break;
-                    case ConsoleKey.DownArrow:
-                        MoveDown();
-                        break;
-                    default:
-                        break;
+                    p = bricks[i].pos + new Position(-2, 0);
+                    if (p.posX < 2)
+                        return false;
+                }
+
+                //左侧动态墙壁判断
+                for (int i = 0; i < bricks.Length; i++)
+                {
+                    p = bricks[i].pos + new Position(-2, 0);
+                    for (int j = 0; j < map.dynMaplist.Count; j++)
+                    {
+                        if (p == map.dynMaplist[j].pos)
+                            return false;
+                    }
                 }
             }
-        } 
-
-        //判断方块触底
-        //
-        public bool TouchBotWall()
-        {
-            //固定墙壁判断
-            if ((Game.h - 5) - brickInfo.bottomposY <= 1)
+            if (!left)
             {
-                return true;
+                //右侧固定墙壁判断
+                for (int i = 0; i < bricks.Length; i++)
+                {
+                    p = bricks[i].pos + new Position(2, 0);
+                    if (p.posX >= Game.w / 2 * 2 - 2)
+                        return false;
+                }
+
+                //右侧动态墙壁判断
+                for (int i = 0; i < bricks.Length; i++)
+                {
+                    p = bricks[i].pos + new Position(2, 0);
+                    for (int j = 0; j < map.dynMaplist.Count; j++)
+                    {
+                        if (p == map.dynMaplist[j].pos)
+                            return false;
+                    }
+                }
+            }
+            
+            return true;
+        }
+        
+        //变方向方法
+        //
+        public void ChangeDir(bool left)
+        {
+            //修改方向索引
+            if (left)
+            {
+                dir--;
+                if (dir < 0)
+                    dir = brickInfo.BrickListCount - 1;
+            }
+            if (!left)
+            {
+                dir++;
+                if (dir > brickInfo.BrickListCount - 1)
+                    dir = 0;
+            }
+
+            //擦除上一帧痕迹
+            ClearLastFrame();
+
+            //提取新方向的位置信息
+            for (int i = 1; i < bricks.Length; i++)
+            {
+                bricks[i].pos = bricks[0].pos + brickInfo[dir][i - 1];
+            }
+
+            Print();
+        }
+
+        //是否可变形判断
+        //
+        public bool CanChangeDir(bool left, Map map)
+        {
+            Position p;
+            int dirTemp = dir;
+
+            if (left)
+            {
+                dirTemp--;
+                if (dirTemp < 0)
+                    dirTemp = brickInfo.BrickListCount - 1;
+            }
+            if (!left)
+            {
+                dirTemp++;
+                if (dirTemp > brickInfo.BrickListCount - 1)
+                    dirTemp = 0;
+            }
+
+            //固定墙壁判断
+            for (int i = 1; i < bricks.Length; i++)
+            {
+                p = bricks[0].pos + brickInfo[dirTemp][i - 1];
+                if (p.posX < 2 || p.posX >= Game.w / 2 * 2 - 2)
+                    return false;
             }
             //动态墙壁判断
-            Position p;
-            for (int i = 0; i < bricks.Length; i++)
+            for (int i = 1; i < bricks.Length; i++)
             {
-                p = new Position(bricks[i].pos.posX, bricks[i].pos.posY + 1);
-                for (int j = 0; j < Map.dynMaplist.Count; j++)
+                p = bricks[0].pos + brickInfo[dirTemp][i - 1];
+                for (int j = 0; j < map.dynMaplist.Count; j++)
                 {
-                    if (p == Map.dynMaplist[j].pos)
-                        return true;
+                    if (p == map.dynMaplist[j].pos)
+                        return false;
                 }
             }
-            return false;
+            return true;
         }
 
-        //平移边界控制
-        //判断方块左右两侧和动态墙壁接触
-        public bool CheckTouchLRWall(int deltaX, bool left)
+        //砖块下落方法
+        //
+        public void MoveDown()
         {
-            Position p;
+            ClearLastFrame();
+
             for (int i = 0; i < bricks.Length; i++)
             {
-                p = new Position(bricks[i].pos.posX + deltaX, bricks[i].pos.posY);
-                //固定边界判断
-                if (left)
-                {
-                    if (p.posX <= 0)
-                        return true;
-                }
-                if (!left)
-                {
-                    if (p.posX >= (Game.w / 2) * 2 - 2)
-                        return true;
-                }
-                //动态边界判断
-                for (int j = 0; j < Map.dynMaplist.Count; j++)
-                {
-                    if (p == Map.dynMaplist[j].pos)
-                        return true;
-                }
+                bricks[i].pos += new Position(0, 1); ;
             }
-            return false;
+
+            Print();
         }
 
-        //变方向边界控制
-        //超出边界时横向位移修正
-        public void ChangeDirHoriModify()
+        //判断是否能下落
+        //
+        public bool CanMoveDown(Map map)
         {
-            //lock (this)
-            //{
-                switch (brickShape)
+            Position p;
+            //固定墙壁底边判断
+            for (int i = 0; i < bricks.Length; i++)
+            {
+                p = bricks[i].pos + new Position(0, 1);
+                if (p.posY == Game.h - 5)
                 {
-                    case E_BrickShape.b:
-                        switch (dir)
-                        {
-                            case 1:
-                                //底边界控制
-                                if(instantPos.posY >= Game.h - 7)
-                                    instantPos.posY = Game.h - 9;   
-                                break;
-                            case 2:
-                                //左边界控制
-                                if (instantPos.posX < 6)
-                                    instantPos.posX = 6;
-                                //右边界控制
-                                if (instantPos.posX >= (Game.w / 2) * 2 - 4)
-                                    instantPos.posX = (Game.w / 2) * 2 - 6;
-                                break;
-                            case 3:
-                                //底边界控制
-                                if (instantPos.posY >= Game.h - 6)
-                                    instantPos.posY = Game.h - 8;
-                                break;
-                            case 4:
-                                //左边界控制
-                                if (instantPos.posX < 4)
-                                    instantPos.posX = 4;
-                                //右边界控制
-                                if (instantPos.posX >= (Game.w / 2) * 2 - 6)
-                                    instantPos.posX = (Game.w / 2) * 2 - 8;
-                                break;
-                            default:
-                                break;
-                        }
-                        break;
-                    case E_BrickShape.c:
-                        switch (dir)
-                        {
-                            case 1:
-                                //左边界控制
-                                if (instantPos.posX < 4)
-                                    instantPos.posX = 4;
-                                break;
-                            case 3:
-                                //右边界控制
-                                if (instantPos.posX >= (Game.w / 2) * 2 - 4)
-                                    instantPos.posX = (Game.w / 2) * 2 - 6;
-                                break;
-                            case 4:
-                                //底边界控制
-                                if (instantPos.posY >= Game.h - 6)
-                                    instantPos.posY = (Game.w / 2) * 2 - 8;
-                            break; 
-                            default:
-                                break;
-                        }
-                        break;
-                    case E_BrickShape.d:
-                        switch (dir)
-                        {
-                            case 1:
-                                //底边界控制
-                                if (instantPos.posY >= Game.h - 6)
-                                    instantPos.posY = Game.h - 8;
-                                break;
-                            case 2:
-                                //左边界控制
-                                if (instantPos.posX < 4)
-                                    instantPos.posX = 4;
-                                break;
-                            case 4:
-                                //右边界控制
-                                if (instantPos.posX >= (Game.w / 2) * 2 - 4)
-                                    instantPos.posX = (Game.w / 2) * 2 - 6;
-                                break;
-                            default:
-                                break;
-                        }
-                        break;
-                    case E_BrickShape.e:
-                        switch (dir)
-                        {
-                            case 2:
-                                //右边界控制
-                                if (instantPos.posX >= (Game.w / 2) * 2 - 4)
-                                    instantPos.posX = (Game.w / 2) * 2 - 6;
-                                break;
-                            case 3:
-                                //底边界控制
-                                if (instantPos.posY >= Game.h - 6)
-                                    instantPos.posY = Game.h - 8;
-                                break;
-                            case 4:
-                                //左边界控制
-                                if (instantPos.posX < 4)
-                                    instantPos.posX = 4;
-                                break;
-                            default:
-                                break;
-                        }
-                        break;
-                    case E_BrickShape.f:
-                        switch (dir)
-                        {
-                            case 2:
-                                //右边界控制
-                                if (instantPos.posX >= (Game.w / 2) * 2 - 4)
-                                    instantPos.posX = (Game.w / 2) * 2 - 6;
-                                break;
-                            case 3:
-                                //底边界控制
-                                if (instantPos.posY >= Game.h - 6)
-                                    instantPos.posY = Game.h - 8;
-                                break;
-                            case 4:
-                                //左边界控制
-                                if (instantPos.posX < 4)
-                                    instantPos.posX = 4;
-                                break;
-                            default:
-                                break;
-                        }
-                        break;
-                    case E_BrickShape.g:
-                        switch (dir)
-                        {
-                            case 1:
-                                //底边界控制
-                                if (instantPos.posY >= Game.h - 6)
-                                    instantPos.posY = Game.h - 8;
-                                break;
-                            case 2:
-                                //左边界控制
-                                if (instantPos.posX < 4)
-                                    instantPos.posX = 4;
-                                break;
-                            case 4:
-                                //右边界控制
-                                if (instantPos.posX >= (Game.w / 2) * 2 - 4)
-                                    instantPos.posX = (Game.w / 2) * 2 - 6;
-                                break;
-                            default:
-                                break;
-                        }
-                        break;
-                    default:
-                        break;
+                    map.AddDynWall(bricks);
+
+                    ProduceBrick();
+
+                    return false;
                 }
-            //}
-            
+            }
+            //动态墙壁边界判断
+            for (int i = 0; i < bricks.Length; i++)
+            {
+                p = bricks[i].pos + new Position(0, 1);
+                for (int j = 0; j < map.dynMaplist.Count; j++)
+                {
+                    if (p == map.dynMaplist[j].pos)
+                    {
+                        map.AddDynWall(bricks);
+
+                        ProduceBrick();
+
+                        return false;
+                    }
+                }
+            }
+            return true;
         }
 
         public BrickManager()
         {
-            bricks = new GameObject[4];
+            //初始化方块字典
+            //把每种方块对象的形状记录起来，提前存在字典里，这样就不用每次创建新方块时都要创建该方块信息对象，节省内存
+            brickDic = new Dictionary<E_BrickShape, BrickInfo>() 
+            {
+                {E_BrickShape.a, new BrickInfo(E_BrickShape.a)},
+                {E_BrickShape.b, new BrickInfo(E_BrickShape.b)},
+                {E_BrickShape.c, new BrickInfo(E_BrickShape.c)},
+                {E_BrickShape.d, new BrickInfo(E_BrickShape.d)},
+                {E_BrickShape.e, new BrickInfo(E_BrickShape.e)},
+                {E_BrickShape.f, new BrickInfo(E_BrickShape.f)},
+                {E_BrickShape.g, new BrickInfo(E_BrickShape.g)}
+            };
+
+            brickShape = E_BrickShape.wall;
+
+            //给每个小方块一个默认位置
+            bricks = new GameObject[4]
+            {
+                new GameObject(new Position(Game.w / 2, 2), brickShape),
+                new GameObject(new Position(Game.w / 2, 2), brickShape),
+                new GameObject(new Position(Game.w / 2, 2), brickShape),
+                new GameObject(new Position(Game.w / 2, 2), brickShape)
+            };
         }
     }
 }

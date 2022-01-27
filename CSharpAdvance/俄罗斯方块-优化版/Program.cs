@@ -8,8 +8,6 @@ namespace 俄罗斯方块_优化版
         {
             Game game = new Game();
             game.GameStart();
-
         }
-
     }
 }

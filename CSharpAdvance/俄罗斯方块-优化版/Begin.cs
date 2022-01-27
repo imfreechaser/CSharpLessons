@@ -11,6 +11,8 @@ namespace 俄罗斯方块_优化版
             btn1 = "开始游戏";
             btn2 = "结束游戏";
             title = "俄罗斯方块";
+
+            PrintTitle();
         }
 
         //切换游戏状态枚举
@@ -19,8 +21,7 @@ namespace 俄罗斯方块_优化版
         {
             if (selectedBtnId == 1)
             {
-                Game.gameState = E_GameState.Run;
-                brkInnerLoop = true;
+                Game.ChangeScene(E_GameState.Run);
             }
             else
             {

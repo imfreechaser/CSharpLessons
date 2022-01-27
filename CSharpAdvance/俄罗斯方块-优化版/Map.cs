@@ -8,28 +8,32 @@ namespace 俄罗斯方块_优化版
     {
         //地图数据集合
         //
-        public static List<GameObject> fixedMaplist;
-        public static List<GameObject> dynMaplist;
+        List<GameObject> fixedMaplist;
+        public List<GameObject> dynMaplist;
 
-        //动态墙壁最高行
+        //动态墙壁每行方块数数组
         //
-        int topPosY;
+        int[] amtEvyRow = new int[Game.h - 5];
+
+        //当前分数
+        //
+        int instantScore = 0;
 
         //绘制固定墙壁方法
         //
-        public void PrintFixedWall()
+        void PrintFixedWall()
         {
             //添加纵向的固定墙壁
             for (int i = 0; i < Game.h - 5; i++)
             {
-                fixedMaplist.Add(new GameObject(new Position(0, i)));
-                fixedMaplist.Add(new GameObject(new Position((Game.w / 2) * 2 - 2, i)));
+                fixedMaplist.Add(new GameObject(new Position(0, i), E_BrickShape.wall));
+                fixedMaplist.Add(new GameObject(new Position((Game.w / 2) * 2 - 2, i), E_BrickShape.wall));
             }
 
             //添加底部横向固定墙壁
             for (int i = 0; i < (Game.w / 2) * 2; i += 2)
             {
-                fixedMaplist.Add(new GameObject(new Position(i, Game.h - 5)));
+                fixedMaplist.Add(new GameObject(new Position(i, Game.h - 5), E_BrickShape.wall));
             }
 
             //打印固定墙壁
@@ -52,83 +56,113 @@ namespace 俄罗斯方块_优化版
             //打印动态添加的小方块,更新动态墙壁的最高行位置
             foreach (GameObject item in dynMaplist)
             {
+                item.SwitchShape(E_BrickShape.dynWall);
                 item.Print();
-                if(item.pos.posY < topPosY)
+            }
+
+            //针对这次添加进来的方块，更新行数量数组
+            for (int i = 0; i < gameObjects.Length; i++)
+            {
+                if(gameObjects[i].pos.posY >= 0)
                 {
-                    topPosY = item.pos.posY;
+                    amtEvyRow[Game.h - 6 - gameObjects[i].pos.posY]++;
                 }
             }
+
+            //检查是否能消除
+            CheckWhetherRemoveHoriWall();
+
+            //死亡判断
+            CheckIsDead();
         }
 
         //判断是否移除整层动态墙壁
         //
-        public void CheckWhetherRemoveHoriWall()
+        void CheckWhetherRemoveHoriWall()
         {
             if (dynMaplist != null)
             {
-                //添加检查索引，从topPosY检查到Game.h - 6，查看每行是否铺满
-                int indexY = topPosY;
-                while(indexY <= Game.h - 6)
+                //查看每行是否铺满
+                for (int i = 0; i < amtEvyRow.Length; i++)
                 {
-                    int horiBrickAmt = 0;
-                    for (int i = 0; i < dynMaplist.Count; i++)
-                    {
-                        if (dynMaplist[i].pos.posY == indexY)
-                            horiBrickAmt++;
-                    }
                     //如果该行铺满
-                    if (horiBrickAmt == Game.w / 2 - 2)
+                    if (amtEvyRow[i] == Game.w / 2 - 2)
                     {
                         //清除该行
-                        for (int i = 0; i < dynMaplist.Count; i++)
+                        for (int j = 0; j < dynMaplist.Count; j++)
                         {
-                            if (dynMaplist[i].pos.posY == indexY)
+                            if (dynMaplist[j].pos.posY == Game.h - 6 - i)
                             {
-                                Console.SetCursorPosition(dynMaplist[i].pos.posX, dynMaplist[i].pos.posY);
+                                Console.SetCursorPosition(dynMaplist[j].pos.posX, dynMaplist[j].pos.posY);
                                 Console.Write("  ");
 
-                                dynMaplist.Remove(dynMaplist[i]);
-                                i--;
+                                dynMaplist.Remove(dynMaplist[j]);
+                                j--;
                             }
                         }
+
                         //该行上方的墙壁全部擦除
-                        for (int i = 0; i < dynMaplist.Count; i++)
+                        for (int j = 0; j < dynMaplist.Count; j++)
                         {
-                            if (dynMaplist[i].pos.posY < indexY)
+                            if (dynMaplist[j].pos.posY < Game.h - 6 - i)
                             {
-                                Console.SetCursorPosition(dynMaplist[i].pos.posX, dynMaplist[i].pos.posY);
+                                Console.SetCursorPosition(dynMaplist[j].pos.posX, dynMaplist[j].pos.posY);
                                 Console.Write("  ");
                             }
                         }
+
                         //该行上方的墙壁全部下移一行
-                        for (int i = 0; i < dynMaplist.Count; i++)
+                        for (int j = 0; j < dynMaplist.Count; j++)
                         {
-                            if (dynMaplist[i].pos.posY < indexY)
+                            if (dynMaplist[j].pos.posY < Game.h - 6 - i)
                             {
-                                dynMaplist[i].pos.posY++;
-                                dynMaplist[i].Print();
+                                dynMaplist[j].pos.posY++;
+                                dynMaplist[j].Print();
                             }
+                        }   
+
+                        //每行方块计数数组的值往前推一位
+                        for (int j = i; j < amtEvyRow.Length - 1; j++)
+                        {
+                            amtEvyRow[j] = amtEvyRow[j + 1];
                         }
-                        //最高行位置下移
-                        topPosY++;
-                        GameScene.instantScore += 10;
+                        amtEvyRow[amtEvyRow.Length - 1] = 0;
+
+                        //计分
+                        instantScore += 10;
+                        printScore();
+
+                        //下一次循环索引保持不变
+                        //i--;
+                        CheckWhetherRemoveHoriWall();
+                        break;
                     }
-                    //检查索引下移
-                    indexY++;
-                }            
+                }         
             }
+        }
+
+        //打印分数方法
+        //
+        public void printScore()
+        {
+            Console.SetCursorPosition(2, Game.h - 3);
+            Console.Write("                           ");
+            Console.SetCursorPosition(2, Game.h - 3);
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write($"当前分数：{instantScore}");
         }
 
         //死亡判断
         //
         public void CheckIsDead()
         {
-            if (topPosY <= 0)
+            if (amtEvyRow[Game.h - 6] > 0)
             {
                 GameScene.Dead = true;
-                Game.gameState = E_GameState.End;
+                End.finalScore = instantScore;
             }
         }
+
         public Map()
         {
             Console.ForegroundColor = ConsoleColor.Red;
@@ -136,7 +170,7 @@ namespace 俄罗斯方块_优化版
             fixedMaplist = new List<GameObject>();
             dynMaplist = new List<GameObject>();
 
-            topPosY = Game.h - 5;
+            PrintFixedWall();
         }
     }
 }

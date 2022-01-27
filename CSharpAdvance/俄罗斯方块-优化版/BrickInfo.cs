@@ -15,225 +15,106 @@ namespace 俄罗斯方块_优化版
         d,
         e,
         f,
-        g
+        g,
+        wall,
+        dynWall
     }
 
     class BrickInfo
     {    
-        //方块位置集合
+        //每个对象的各种方向形状集合
         //
-        public Position[] positions = new Position[4];
+        List<Position[]> brickList;
 
-        //方块的下位置极值
+        //从外部获取形状信息的索引器
         //
-        public int bottomposY;
-
-        //改变方块位置、方向
-        //
-        public void Move(E_BrickShape brickShape,int dir, Position oriPos)
+        public Position[] this[int index]
         {
-            positions[0] = oriPos;
-            switch (brickShape)
+            get
             {
-                case E_BrickShape.a:
-                    Console.ForegroundColor = ConsoleColor.Blue;
-                    positions[1] = new Position(oriPos.posX, oriPos.posY + 1);
-                    positions[2] = new Position(oriPos.posX + 2, oriPos.posY + 1);
-                    positions[3] = new Position(oriPos.posX + 2, oriPos.posY);
-                    break;
-
-                case E_BrickShape.b:
-                    Console.ForegroundColor = ConsoleColor.Magenta;
-                    switch (dir)
-                    {
-                        case 1:
-                            positions[1] = new Position(oriPos.posX, oriPos.posY + 1);
-                            positions[2] = new Position(oriPos.posX, oriPos.posY + 2);
-                            positions[3] = new Position(oriPos.posX, oriPos.posY - 1);
-                            break;
-                        case 2:
-                            positions[1] = new Position(oriPos.posX - 2, oriPos.posY);
-                            positions[2] = new Position(oriPos.posX - 4, oriPos.posY);
-                            positions[3] = new Position(oriPos.posX + 2, oriPos.posY);
-                            break;
-                        case 3:
-                            positions[1] = new Position(oriPos.posX, oriPos.posY + 1);
-                            positions[2] = new Position(oriPos.posX, oriPos.posY - 2);
-                            positions[3] = new Position(oriPos.posX, oriPos.posY - 1);
-                            break;
-                        case 4:
-                            positions[1] = new Position(oriPos.posX - 2, oriPos.posY);
-                            positions[2] = new Position(oriPos.posX + 2, oriPos.posY);
-                            positions[3] = new Position(oriPos.posX + 4, oriPos.posY);
-                            break;
-                        default:
-                            break;
-                    }
-                    break;
-                case E_BrickShape.c:
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    switch (dir)
-                    {
-                        case 1:
-                            positions[1] = new Position(oriPos.posX - 2, oriPos.posY);
-                            positions[2] = new Position(oriPos.posX, oriPos.posY + 1);
-                            positions[3] = new Position(oriPos.posX + 2, oriPos.posY);
-                            break;
-                        case 2:
-                            positions[1] = new Position(oriPos.posX - 2, oriPos.posY);
-                            positions[2] = new Position(oriPos.posX, oriPos.posY + 1);
-                            positions[3] = new Position(oriPos.posX, oriPos.posY - 1);
-                            break;
-                        case 3:
-                            positions[1] = new Position(oriPos.posX - 2, oriPos.posY);
-                            positions[2] = new Position(oriPos.posX + 2, oriPos.posY);
-                            positions[3] = new Position(oriPos.posX, oriPos.posY - 1);
-                            break;
-                        case 4:
-                            positions[1] = new Position(oriPos.posX, oriPos.posY + 1);
-                            positions[2] = new Position(oriPos.posX + 2, oriPos.posY);
-                            positions[3] = new Position(oriPos.posX, oriPos.posY - 1);
-                            break;
-                        default:
-                            break;
-                    }
-                    break;
-                case E_BrickShape.d:
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                    switch (dir)
-                    {
-                        case 1:
-                            positions[1] = new Position(oriPos.posX + 2, oriPos.posY + 1);
-                            positions[2] = new Position(oriPos.posX + 2, oriPos.posY);
-                            positions[3] = new Position(oriPos.posX, oriPos.posY - 1);
-                            break;
-                        case 2:
-                            positions[1] = new Position(oriPos.posX - 2, oriPos.posY + 1);
-                            positions[2] = new Position(oriPos.posX, oriPos.posY + 1);
-                            positions[3] = new Position(oriPos.posX + 2, oriPos.posY);
-                            break;
-                        case 3:
-                            positions[1] = new Position(oriPos.posX - 2, oriPos.posY);
-                            positions[2] = new Position(oriPos.posX, oriPos.posY + 1);
-                            positions[3] = new Position(oriPos.posX - 2, oriPos.posY - 1);
-                            break;
-                        case 4:
-                            positions[1] = new Position(oriPos.posX - 2, oriPos.posY);
-                            positions[2] = new Position(oriPos.posX + 2, oriPos.posY - 1);
-                            positions[3] = new Position(oriPos.posX, oriPos.posY - 1);
-                            break;
-                        default:
-                            break;
-                    }
-                    break;
-                case E_BrickShape.e:
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                    switch (dir)
-                    {
-                        case 1:
-                            positions[1] = new Position(oriPos.posX - 2, oriPos.posY);
-                            positions[2] = new Position(oriPos.posX - 2, oriPos.posY + 1);
-                            positions[3] = new Position(oriPos.posX, oriPos.posY - 1);
-                            break;
-                        case 2:
-                            positions[1] = new Position(oriPos.posX + 2, oriPos.posY);
-                            positions[2] = new Position(oriPos.posX, oriPos.posY - 1);
-                            positions[3] = new Position(oriPos.posX - 2, oriPos.posY - 1);
-                            break;
-                        case 3:
-                            positions[1] = new Position(oriPos.posX, oriPos.posY + 1);
-                            positions[2] = new Position(oriPos.posX + 2, oriPos.posY);
-                            positions[3] = new Position(oriPos.posX + 2, oriPos.posY - 1);
-                            break;
-                        case 4:
-                            positions[1] = new Position(oriPos.posX - 2, oriPos.posY);
-                            positions[2] = new Position(oriPos.posX, oriPos.posY + 1);
-                            positions[3] = new Position(oriPos.posX + 2, oriPos.posY + 1);
-                            break;
-                        default:
-                            break;
-                    }
-                    break;
-                case E_BrickShape.f:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    switch (dir)
-                    {
-                        case 1:
-                            positions[1] = new Position(oriPos.posX, oriPos.posY + 1);
-                            positions[2] = new Position(oriPos.posX, oriPos.posY - 1);
-                            positions[3] = new Position(oriPos.posX - 2, oriPos.posY - 1);
-                            break;
-                        case 2:
-                            positions[1] = new Position(oriPos.posX - 2, oriPos.posY);
-                            positions[2] = new Position(oriPos.posX + 2, oriPos.posY);
-                            positions[3] = new Position(oriPos.posX + 2, oriPos.posY - 1);
-                            break;
-                        case 3:
-                            positions[1] = new Position(oriPos.posX, oriPos.posY + 1);
-                            positions[2] = new Position(oriPos.posX + 2, oriPos.posY + 1);
-                            positions[3] = new Position(oriPos.posX, oriPos.posY - 1);
-                            break;
-                        case 4:
-                            positions[1] = new Position(oriPos.posX - 2, oriPos.posY);
-                            positions[2] = new Position(oriPos.posX - 2, oriPos.posY + 1);
-                            positions[3] = new Position(oriPos.posX + 2, oriPos.posY);
-                            break;
-                        default:
-                            break;
-                    }
-                    break;
-                case E_BrickShape.g:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    switch (dir)
-                    {
-                        case 1:
-                            positions[1] = new Position(oriPos.posX, oriPos.posY + 1);
-                            positions[2] = new Position(oriPos.posX + 2, oriPos.posY - 1);
-                            positions[3] = new Position(oriPos.posX, oriPos.posY - 1);
-                            break;
-                        case 2:
-                            positions[1] = new Position(oriPos.posX - 2, oriPos.posY);
-                            positions[2] = new Position(oriPos.posX + 2, oriPos.posY + 1);
-                            positions[3] = new Position(oriPos.posX + 2, oriPos.posY);
-                            break;
-                        case 3:
-                            positions[1] = new Position(oriPos.posX - 2, oriPos.posY + 1);
-                            positions[2] = new Position(oriPos.posX, oriPos.posY + 1);
-                            positions[3] = new Position(oriPos.posX, oriPos.posY - 1);
-                            break;
-                        case 4:
-                            positions[1] = new Position(oriPos.posX - 2, oriPos.posY);
-                            positions[2] = new Position(oriPos.posX + 2, oriPos.posY);
-                            positions[3] = new Position(oriPos.posX - 2, oriPos.posY - 1);
-                            break;
-                        default:
-                            break;
-                    }
-                    break;
-                default:
-                    break;
-            }
-
-            //更新方块的下位置极值
-            for (int i = 0; i < positions.Length; i++)
-            {
-                if(i == 0)
-                {
-                    bottomposY = positions[i].posY;
-                }
-                else
-                {
-                    if(positions[i].posY > bottomposY)
-                    {
-                        bottomposY = positions[i].posY;
-                    }
-                }
+                //索引合法性判断
+                if (index < 0 || index > brickList.Count - 1)
+                    return null;
+                return brickList[index];
             }
         }
 
-        public BrickInfo(E_BrickShape brickShape, int dir, Position oriPos)
+        //从外部获取到brickList的长度
+        //
+        public int BrickListCount
         {
-            Move(brickShape, dir, oriPos);
+            get => brickList.Count;
+        }
+
+        public BrickInfo(E_BrickShape brickShape)
+        {
+            //通过方块对象的类型，得到关于这个对象的所有方向的形状位置信息（相对位置）
+            switch (brickShape)
+            {
+                case E_BrickShape.a:
+                    brickList = new List<Position[]>()
+                    {
+                        new Position[]{new Position(0,1),new Position(2,1),new Position(2,0)}
+                    };
+                    break;
+                case E_BrickShape.b:
+                    brickList = new List<Position[]>()
+                    {
+                        new Position[]{new Position(0,1),new Position(0,2),new Position(0,-1)},
+                        new Position[]{new Position(-2,0),new Position(-4,0),new Position(2,0)},
+                        new Position[]{new Position(0,1),new Position(0,-2),new Position(0,-1)},
+                        new Position[]{new Position(-2,0),new Position(4,0),new Position(2,0)}
+                    };
+                    break;
+                case E_BrickShape.c:
+                    brickList = new List<Position[]>()
+                    {
+                        new Position[]{new Position(-2,0),new Position(0,1),new Position(2,0)},
+                        new Position[]{new Position(-2,0),new Position(0,1),new Position(0,-1)},
+                        new Position[]{new Position(-2,0),new Position(2,0),new Position(0,-1)},
+                        new Position[]{new Position(0,1),new Position(2,0),new Position(0,-1)}
+                    };
+                    break;
+                case E_BrickShape.d:
+                    brickList = new List<Position[]>()
+                    {
+                        new Position[]{new Position(2,1),new Position(2,0),new Position(0,-1)},
+                        new Position[]{new Position(-2,1),new Position(0,1),new Position(2,0)},
+                        new Position[]{new Position(-2,0),new Position(0,1),new Position(-2,-1)},
+                        new Position[]{new Position(-2,0),new Position(2,-1),new Position(0,-1)}
+                    };
+                    break;
+                case E_BrickShape.e:
+                    brickList = new List<Position[]>()
+                    {
+                        new Position[]{new Position(-2,0),new Position(-2,1),new Position(0,-1)},
+                        new Position[]{new Position(2,0),new Position(0,-1),new Position(-2,-1)},
+                        new Position[]{new Position(0,1),new Position(2,0),new Position(2,-1)},
+                        new Position[]{new Position(-2,0),new Position(0,1),new Position(2,1)}
+                    };
+                    break;
+                case E_BrickShape.f:
+                    brickList = new List<Position[]>()
+                    {
+                        new Position[]{new Position(0,1),new Position(0,-1),new Position(-2,-1)},
+                        new Position[]{new Position(-2,0),new Position(2,0),new Position(2,-1)},
+                        new Position[]{new Position(0,1),new Position(2,1),new Position(0,-1)},
+                        new Position[]{new Position(-2,0),new Position(-2,1),new Position(2,0)}
+                    };
+                    break;
+                case E_BrickShape.g:
+                    brickList = new List<Position[]>()
+                    {
+                        new Position[]{new Position(0,1),new Position(2,-1),new Position(0,-1)},
+                        new Position[]{new Position(-2,0),new Position(2,1),new Position(2,0)},
+                        new Position[]{new Position(-2,1),new Position(0,1),new Position(0,-1)},
+                        new Position[]{new Position(-2,0),new Position(2,0),new Position(-2,-1)}
+                    };
+                    break;
+                default:
+                    brickList = new List<Position[]>();
+                    break;
+            }
         }
 
     }
