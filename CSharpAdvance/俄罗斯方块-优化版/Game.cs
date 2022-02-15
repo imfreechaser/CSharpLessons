@@ -27,7 +27,7 @@ namespace 俄罗斯方块_优化版
         /// <summary>
         /// 控制台窗口宽高
         /// </summary>
-        public const int w = 53, h = 35;
+        public const int w = 40, h = 30;
         /// <summary>
         /// 当前游戏场景
         /// </summary>
