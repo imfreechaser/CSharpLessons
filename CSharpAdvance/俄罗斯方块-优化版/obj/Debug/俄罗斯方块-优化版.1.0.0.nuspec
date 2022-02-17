@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>俄罗斯方块-优化版</id>
+    <version>1.0.0</version>
+    <authors>俄罗斯方块-优化版</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework=".NETCoreApp3.1" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\俄罗斯方块-优化版\bin\Debug\netcoreapp3.1\俄罗斯方块-优化版.runtimeconfig.json" target="lib\netcoreapp3.1\俄罗斯方块-优化版.runtimeconfig.json" />
+    <file src="C:\Users\RayData\source\repos\CSharpLessons\CSharpAdvance\俄罗斯方块-优化版\bin\Debug\netcoreapp3.1\俄罗斯方块-优化版.dll" target="lib\netcoreapp3.1\俄罗斯方块-优化版.dll" />
+  </files>
+</package>

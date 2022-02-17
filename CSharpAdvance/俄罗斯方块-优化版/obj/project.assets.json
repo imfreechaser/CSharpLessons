@@ -1,26 +1,27 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {},
+    ".NETCoreApp,Version=v3.1/win-x64": {}
   },
   "libraries": {},
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\Erina\\.nuget\\packages\\": {}
+    "C:\\Users\\RayData\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Erina\\source\\repos\\CSharpLessons\\CSharpAdvance\\俄罗斯方块-优化版\\俄罗斯方块-优化版.csproj",
+      "projectUniqueName": "C:\\Users\\RayData\\source\\repos\\CSharpLessons\\CSharpAdvance\\俄罗斯方块-优化版\\俄罗斯方块-优化版.csproj",
       "projectName": "俄罗斯方块-优化版",
-      "projectPath": "C:\\Users\\Erina\\source\\repos\\CSharpLessons\\CSharpAdvance\\俄罗斯方块-优化版\\俄罗斯方块-优化版.csproj",
-      "packagesPath": "C:\\Users\\Erina\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Erina\\source\\repos\\CSharpLessons\\CSharpAdvance\\俄罗斯方块-优化版\\obj\\",
+      "projectPath": "C:\\Users\\RayData\\source\\repos\\CSharpLessons\\CSharpAdvance\\俄罗斯方块-优化版\\俄罗斯方块-优化版.csproj",
+      "packagesPath": "C:\\Users\\RayData\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\RayData\\source\\repos\\CSharpLessons\\CSharpAdvance\\俄罗斯方块-优化版\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Erina\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\RayData\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -32,7 +33,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -44,7 +44,6 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
-        "targetAlias": "netcoreapp3.1",
         "imports": [
           "net461",
           "net462",
@@ -55,12 +54,31 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+            "version": "[3.1.20, 3.1.20]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Runtime.win-x64",
+            "version": "[3.1.20, 3.1.20]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+            "version": "[3.1.20, 3.1.20]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.414\\RuntimeIdentifierGraph.json"
+      }
+    },
+    "runtimes": {
+      "win-x64": {
+        "#import": []
       }
     }
   }

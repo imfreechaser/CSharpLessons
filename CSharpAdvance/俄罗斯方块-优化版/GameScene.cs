@@ -7,7 +7,7 @@ namespace 俄罗斯方块_优化版
 {
     class GameScene : ISceneUpdate
     {
-        Map map = new Map();
+        Map map;
         BrickManager bm = new BrickManager();
         public static bool Dead;
         
@@ -36,16 +36,21 @@ namespace 俄罗斯方块_优化版
 
         public GameScene()
         {
+            //重置地图
+            map = new Map();
+
             //开启输入线程
             InputThread.Instance.UserInputEvent += UserInput;
 
+            //重置参数
             Dead = false;
 
             //随机创建方块
             bm.ProduceBrick();
 
-            //打印分数
-            map.printScore();
+            //打印当前分数
+            map.PrintScore();
+
         }
 
         //用户输入方法
@@ -77,6 +82,9 @@ namespace 俄罗斯方块_优化版
                         case ConsoleKey.DownArrow:
                             if (bm.CanMoveDown(map))
                                 bm.MoveDown();
+                            break;
+                        case ConsoleKey.Escape:
+                            Dead = true;
                             break;
                         default:
                             break;

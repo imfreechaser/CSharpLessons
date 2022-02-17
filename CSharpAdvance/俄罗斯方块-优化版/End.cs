@@ -6,12 +6,14 @@ namespace 俄罗斯方块_优化版
 {
     class End:BeginOrEnd
     {
-        public static int finalScore = 0;
+        int finalScore = 0;
         public End()
         {
             btn1 = "重新开始";
             btn2 = "结束游戏";
             title = "游戏结束";
+
+            finalScore = Map.InstantScore;
 
             PrintTitle();
         }
@@ -40,6 +42,9 @@ namespace 俄罗斯方块_优化版
 
             Console.SetCursorPosition(Game.w / 2 - 6, Game.h / 5 + 4);
             Console.Write($"本局分数：{finalScore}");
+
+            Console.SetCursorPosition(2, Game.h - 2);
+            Console.Write("键盘↑↓键切换选项，按回车键确认");
         }
     }
 }

@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "ONwXllez9DMOaqAMO8P3Z527RGIjNbbJM+43XDQuR+/jY/1BGruBTwD93wcOcGf63zppOfL1FHlGalezfRW9pA==",
+  "dgSpecHash": "fUzu54NwN6Nnlpbqe71OE0ZWJ2kZ6KgNd46tMk6Ev+gqx5RF46/ka96Qjuj4CdNpo6HCkxAsy/dlaUxyM9hZMw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Erina\\source\\repos\\CSharpLessons\\CSharpAdvance\\俄罗斯方块-优化版\\俄罗斯方块-优化版.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\RayData\\source\\repos\\CSharpLessons\\CSharpAdvance\\俄罗斯方块-优化版\\俄罗斯方块-优化版.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\RayData\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\3.1.20\\microsoft.netcore.app.runtime.win-x64.3.1.20.nupkg.sha512",
+    "C:\\Users\\RayData\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\3.1.20\\microsoft.windowsdesktop.app.runtime.win-x64.3.1.20.nupkg.sha512",
+    "C:\\Users\\RayData\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\3.1.20\\microsoft.aspnetcore.app.runtime.win-x64.3.1.20.nupkg.sha512"
+  ],
   "logs": []
 }

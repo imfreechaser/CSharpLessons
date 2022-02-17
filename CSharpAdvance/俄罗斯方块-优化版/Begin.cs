@@ -36,6 +36,9 @@ namespace 俄罗斯方块_优化版
             Console.ForegroundColor = ConsoleColor.White;
             Console.SetCursorPosition(Game.w / 2 - 5, Game.h / 5);
             Console.Write(title);
+
+            Console.SetCursorPosition(2, Game.h - 2);
+            Console.Write("键盘↑↓键切换选项，按回车键确认");
         }
     }
 }

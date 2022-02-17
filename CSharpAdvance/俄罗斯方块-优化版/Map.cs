@@ -17,7 +17,7 @@ namespace 俄罗斯方块_优化版
 
         //当前分数
         //
-        int instantScore = 0;
+        public static int InstantScore{ get; private set;}
 
         //绘制固定墙壁方法
         //
@@ -129,8 +129,8 @@ namespace 俄罗斯方块_优化版
                         amtEvyRow[amtEvyRow.Length - 1] = 0;
 
                         //计分
-                        instantScore += 10;
-                        printScore();
+                        InstantScore += 10;
+                        PrintScore();
 
                         //下一次循环索引保持不变
                         //i--;
@@ -143,13 +143,24 @@ namespace 俄罗斯方块_优化版
 
         //打印分数方法
         //
-        public void printScore()
+        public void PrintScore()
         {
-            Console.SetCursorPosition(2, Game.h - 3);
-            Console.Write("                           ");
-            Console.SetCursorPosition(2, Game.h - 3);
             Console.ForegroundColor = ConsoleColor.White;
-            Console.Write($"当前分数：{instantScore}");
+            Console.SetCursorPosition(Game.w / 2 - 5, Game.h - 1);
+            Console.Write("                           ");
+            Console.SetCursorPosition(Game.w / 2 - 5, Game.h - 1);
+            Console.Write($"当前分数：{InstantScore}");
+        }
+
+        //打印操作提示
+        //
+        void PrintHint()
+        {
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.SetCursorPosition(1, Game.h - 4);
+            Console.Write("键盘← →键平移方块，↓加速方块下落");
+            Console.SetCursorPosition(1, Game.h - 3);
+            Console.Write("A/D键旋转方块方向，Esc键结束游戏");
         }
 
         //死亡判断
@@ -159,7 +170,7 @@ namespace 俄罗斯方块_优化版
             if (amtEvyRow[Game.h - 6] > 0)
             {
                 GameScene.Dead = true;
-                End.finalScore = instantScore;
+                //End.finalScore = instantScore;
             }
         }
 
@@ -171,6 +182,12 @@ namespace 俄罗斯方块_优化版
             dynMaplist = new List<GameObject>();
 
             PrintFixedWall();
+
+            //重置分数
+            InstantScore = 0;
+
+            //打印操作提示
+            PrintHint();
         }
     }
 }
