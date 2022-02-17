@@ -1,8 +1,0 @@
-{
-  "runtimeOptions": {
-    "additionalProbingPaths": [
-      "C:\\Users\\RayData\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\RayData\\.nuget\\packages"
-    ]
-  }
-}
